@@ -64,14 +64,25 @@
     </section>
 </body>
 <script>
-    VANTA.NET({
-        el: "#bg",
-        color: 0xbb3f8f,
-        backgroundColor: 0x1d203e,
-        points: 10.00,
-        maxDistance: 18.00,
-        spacing: 13.00
-    })
+    if(window.innerWidth < 600) {
+        VANTA.NET({
+            el: "#bg",
+            color: 0xbb3f8f,
+            backgroundColor: 0x1d203e,
+            points: 10.00,
+            maxDistance: 18.00,
+            spacing: 20.00
+        })
+    } else {
+        VANTA.NET({
+            el: "#bg",
+            color: 0xbb3f8f,
+            backgroundColor: 0x1d203e,
+            points: 10.00,
+            maxDistance: 18.00,
+            spacing: 13.00
+        })
+    }
 </script>
 
 </html>
