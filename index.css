@@ -18,33 +18,14 @@ a {
 }
 
 a.text-link {
-    padding: 2px;
-    color: black;
-    background-color: rgba(255, 255, 255, 0.75);
+    padding-right: 3.5px;
+    padding-left: 3.5px;
+    color: whitesmoke;
+    background-color: rgba(165, 9, 105, 0.829);
 }
 
 a.text-link:hover {
-    background-color: grey;
-    color: black;
-}
-
-ul {
-    /* display: inline-flex; */
-    list-style-type: none;
-}
-
-li {
-    position: relative;
-    display: inline-flex;
-    padding-left: 10px;
-}
-
-.fab,
-.fas {
-    position: relative;
-    top: 25px;
-    left: -20px;
-    font-size: 20px;
+    background-color:rgb(160, 12, 111);
     color: white;
 }
 
@@ -54,11 +35,6 @@ li {
     top: 50%;
 }
 
-.social-links {
-    padding-left: 10px;
-}
-
-
 #profile {
     position: relative;
     border-radius: 50%;
@@ -66,14 +42,29 @@ li {
     height: 185px;
     padding: 35px;
     left: 20px;
+}
 
+.fab,
+.fas {
+    padding-right: 15px;
+    font-size: 25px;
+    color: white;
+}
+
+.fab:hover,
+.fas:hover {
+    color: gray;
+}
+
+.social-links {
+    padding-top: 20px;
 }
 
 .text {
+    position: relative;
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 10px;
-    position: relative;
     text-align: left;
 }
 
@@ -84,7 +75,7 @@ li {
 /* Mobile viewports */
 @media screen AND (max-width: 600px) {
 
-    h1 {
+    .intro {
         font-size: 6vw;
     }
 
@@ -102,11 +93,14 @@ li {
 
     .fab,
     .fas {
-        margin: auto;
-        top: 20px;
-        left: -7.5px;
-        font-size: 20px;
+        margin: 2vw;
+        padding-right: 0px;
+        font-size: 5vw;
         color: white;
+    }
+    
+    .social-links {
+        padding-top: 5vw;
     }
 
     .hero {
