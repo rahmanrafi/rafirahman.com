@@ -25,7 +25,7 @@ a.text-link {
 }
 
 a.text-link:hover {
-    background-color:rgb(160, 12, 111);
+    background-color: rgb(160, 12, 111);
     color: white;
 }
 
@@ -44,9 +44,12 @@ a.text-link:hover {
     left: 20px;
 }
 
+.social-links>a {
+    margin-right: 15px;
+}
+
 .fab,
 .fas {
-    padding-right: 15px;
     font-size: 25px;
     color: white;
 }
@@ -98,7 +101,7 @@ a.text-link:hover {
         font-size: 5vw;
         color: white;
     }
-    
+
     .social-links {
         padding-top: 5vw;
     }
