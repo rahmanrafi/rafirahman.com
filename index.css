@@ -1,11 +1,6 @@
 body {
     margin: 0;
-}
-
-#bg {
-    position: fixed;
-    width: 100%;
-    height: 100%;
+    background-color: #1d203e;
 }
 
 .text {
@@ -132,5 +127,29 @@ a.text-link:hover {
 
     .text {
         text-align: center;
+    }
+}
+
+@media screen AND (max-height: 750px){
+
+    .hero {
+        position: absolute;
+        top: 25vh;
+    }
+
+    .text{
+        font-size: calc(10px + 1vh);
+    }
+
+    .fab, .fas{
+        font-size: calc(12px + 2vh);
+    }
+
+    .social-links{
+        padding-top:5vh;
+    }
+
+    .social-links>a:not(:last-child) {
+        margin-right: 5vh;
     }
 }

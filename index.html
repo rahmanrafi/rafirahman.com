@@ -31,7 +31,6 @@
 </head>
 
 <body>
-    <div id="bg"></div>
     <div class="hero">
         <img class="hero" id="profile" src="/images/profile.JPG" alt="Profile picture">
         <div class="text" id=text>
@@ -70,7 +69,7 @@
 
     if (window.innerWidth < 600) {
         VANTA.NET({
-            el: "#bg",
+            el: "body",
             color: 0xbb3f8f,
             backgroundColor: 0x1d203e,
             points: 10.00,
@@ -79,7 +78,7 @@
         })
     } else {
         VANTA.NET({
-            el: "#bg",
+            el: "body",
             color: 0xbb3f8f,
             backgroundColor: 0x1d203e,
             points: 10.00,
