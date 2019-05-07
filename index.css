@@ -110,7 +110,7 @@ a.text-link:hover {
     .hero {
         position: absolute;
         display: block;
-        top: 10%;
+        top: 12vh;
     }
 
     #profile {
@@ -146,7 +146,8 @@ a.text-link:hover {
     }
 
     .social-links{
-        padding-top:5vh;
+        padding-top: 5vh;
+        padding-bottom: 10vh;
     }
 
     .social-links>a:not(:last-child) {
@@ -154,8 +155,8 @@ a.text-link:hover {
     }
 
     #profile {
-        width: calc(75px + 25vh);
-        height: calc(75px + 25vh);
+        width: calc(75px + 15vh);
+        height: calc(75px + 15vh);
         top: 5vh;
     }
 }
