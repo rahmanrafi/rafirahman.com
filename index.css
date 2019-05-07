@@ -114,7 +114,7 @@ a.text-link:hover {
     }
 
     #profile {
-        position: relative;
+        position: relative;\
         margin: auto;
         width: 50%;
         max-width: 30%;
@@ -154,6 +154,8 @@ a.text-link:hover {
     }
 
     #profile {
-        top: auto;
+        width: calc(75px + 25vh);
+        height: calc(75px + 25vh);
+        top: 5vh;
     }
 }
