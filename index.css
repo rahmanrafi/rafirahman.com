@@ -130,7 +130,7 @@ a.text-link:hover {
     }
 }
 
-@media screen AND (max-height: 750px){
+@media screen AND (max-height: 750px) AND (min-width: 751px){
 
     .hero {
         position: absolute;
@@ -151,5 +151,9 @@ a.text-link:hover {
 
     .social-links>a:not(:last-child) {
         margin-right: 5vh;
+    }
+
+    #profile {
+        top: auto;
     }
 }
