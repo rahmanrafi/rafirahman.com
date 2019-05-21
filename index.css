@@ -106,7 +106,7 @@ a.text-link:hover {
     .social-links>a:last-child {
         margin-right: 0px;
     }
-    
+
     .hero {
         position: absolute;
         display: block;
@@ -130,22 +130,23 @@ a.text-link:hover {
     }
 }
 
-@media screen AND (max-height: 750px) AND (min-width: 751px){
+@media screen AND (max-height: 750px) AND (min-width: 751px) {
 
     .hero {
         position: absolute;
         top: 15vh;
     }
 
-    .text{
+    .text {
         font-size: calc(10px + 1vh);
     }
 
-    .fab, .fas{
+    .fab,
+    .fas {
         font-size: calc(12px + 2vh);
     }
 
-    .social-links{
+    .social-links {
         padding-top: 5vh;
         padding-bottom: 10vh;
     }
