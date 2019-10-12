@@ -28,6 +28,7 @@ a.text-link:hover {
     position: fixed;
     display: inline-flex;
     top: 50%;
+    z-index: 1;
 }
 
 #profile {
