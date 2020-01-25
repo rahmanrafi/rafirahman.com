@@ -3,6 +3,7 @@
 <html>
 
 <head>
+    <title>Rafi Rahman</title>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136152918-1"></script>
     <script>
@@ -12,7 +13,7 @@
 
         gtag('config', 'UA-136152918-1');
     </script>
-    <title>Rafi Rahman</title>
+    <script src="scripts/typeit.min.js"></script>
     <!-- Background effect scripts -->
     <script src="scripts/three.min.js"></script>
     <script src="scripts/vanta.net.min.js"></script>
@@ -22,32 +23,32 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
-    <link rel="manifest" href="/favicons/site.webmanifest">
-    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="/favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+    <link rel="manifest" href="favicons/site.webmanifest">
+    <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="favicons/favicon.ico">
     <meta name="msapplication-TileColor" content="#ffc40d">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    <meta name="msapplication-config" content="favicons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
     <div class="hero">
-        <img class="hero" id="profile" src="/images/profile.JPG" alt="Profile picture">
+        <img class="hero" id="profile" src="images/profile.JPG" alt="Profile picture">
         <div class="text" id=text>
             <h1 class="big-text">Hey, I'm <strong><a href="mailto:hello@rafirahman.com" class="text-link">Rafi
-                Rahman</a>.
-        </strong></h1>
+                        Rahman</a>.
+                </strong></h1>
             <h2 class="big-text">
                 I studied computer science at the University of Toronto.</h2>
             <div class="small-text intro"><strong>
                     Hey! I'm <a href="mailto:hello@rafirahman.com" class="text-link"> Rafi Rahman</a>.
                 </strong></div>
             <h3 class="small-text">I'm a recent graduate from the University of Toronto.</h3>
-            <h3>I love coding things, hacking things, making things, and dogs.</h3>
+            <h3>I love <span id="typer">creating.</span></h3>
             <h3>Here's my <a href="resume.pdf" class="text-link">resume</a>. </h3>
             <h3>Feel free to say hi!</h3>
             <div class="social-links">
@@ -60,6 +61,19 @@
         </div>
     </div>
 </body>
+
+<script>
+    const instance = new TypeIt('#typer', {
+        strings: ['coding.', 'hacking.', 'soldering.', 'tinkering.', 'dogs.', 'creating.'],
+        speed: 100,
+        breakLines: false,
+        waitUntilVisible: true,
+        loop: true,
+        nextStringDelay: 2000,
+        loopDelay: [100, 2500],
+        startDelete: true
+    }).go();
+</script>
 
 <script>
     if (window.innerWidth < 600) {
