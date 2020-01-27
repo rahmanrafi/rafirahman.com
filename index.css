@@ -12,14 +12,14 @@ body {
     text-align: left;
 }
 
+.tagline {
+    font-size: calc(25px + 2vh);
+    margin-top: calc(10px + 1vh);
+}
+
 h1 {
     font-size: calc(30px + 3vh);
     margin-block-end: auto;
-}
-
-.tagline{
-    font-size: calc(25px + 2vh);
-    margin-top: calc(10px + 1vh);
 }
 
 h3 {
@@ -27,7 +27,7 @@ h3 {
     margin-top: calc(10px + 1.25vh);
 }
 
-h4{
+h4 {
     font-size: calc(15px + 1vh);
     margin-top: calc(10px + 1.5vh);
 }
@@ -56,13 +56,13 @@ a.text-link:hover {
     z-index: 1;
 }
 
-#profile {
+.profile {
     position: relative;
     border-radius: 50%;
     min-width: 175px;
     min-height: 175px;
-    max-width: 250px;
-    max-height: 250px;
+    max-width: 200px;
+    max-height: 200px;
     width: 20vh;
     height: 20vh;
     padding: 35px;
@@ -71,72 +71,63 @@ a.text-link:hover {
     transform: translateY(5%);
 }
 
+.social-links {
+    padding-top: 2vh;
+}
+
 .social-links>a:not(:last-child) {
     margin-right: calc(20px + 4vh);
 }
 
-.fab,
-.fas {
-    font-size: calc(17px + 1vh);
+.fab, .fas {
+    font-size: calc(17px + 1.25vh);
     color: white;
 }
 
-.fab:hover,
-.fas:hover {
-    color: gray;
-}
-
-.social-links {
-    padding-top: 2vh;
+.fab:hover, .fas:hover {
+    color: rgb(138, 125, 134);
 }
 
 .small-text {
     display: none;
 }
 
-/* Mobile viewports */
-@media screen AND (max-width: 1000px) {
+/* Narrow (i.e. mobile) viewports */
 
-    #intro {
-        text-align: left;
-    }
-
+@media screen AND (max-width: 1080px) {
     h3 {
-        font-size: 4vw;
+        font-size: 6vw;
     }
-
+    h4 {
+        font-size: 5vw
+    }
     .big-text {
         display: none;
     }
-
     .small-text {
         display: inline-flex;
+        font-size: 8vw
     }
-
-    .fab,
-    .fas {
+    .fab, .fas {
         font-size: 5vw;
     }
-
     .social-links {
         padding-top: 7vw;
     }
-
     .social-links>a:not(:last-child) {
         margin-right: 5vw;
     }
-
     .social-links>a:last-child {
         margin-right: 0px;
     }
-
     .hero {
         position: absolute;
         display: block;
+        margin-left: 2vw;
     }
-
-    #profile {
+    .profile {
         position: relative;
+        border-radius: 25%;
         width: 20vw;
         height: 20vw;
         min-width: 150px;
@@ -145,18 +136,17 @@ a.text-link:hover {
         max-height: 50%;
         left: -10px;
         top: 20px;
-
     }
 }
 
-/* @media screen AND (max-height: 1000px) AND (min-width: 751px) {
-
+@media screen AND (max-height: 320px) AND (min-width: 751px) {
     .hero {
-        position: absolute;
-        top: 15vh;
+        transform: none;
+        top: inherit;
     }
+}
 
-    .text {
+/* .text {
         font-size: calc(10px + 1vh);
     }
 
@@ -170,11 +160,11 @@ a.text-link:hover {
         padding-bottom: 10vh;
     } */
 
-    /* .social-links>a:not(:last-child) {
+/* .social-links>a:not(:last-child) {
         margin-right: 5vh;
     } */
 
-    /* #profile {
+/* #profile {
         width: calc(75px + 15vh);
         height: calc(75px + 15vh);
         top: 5vh;

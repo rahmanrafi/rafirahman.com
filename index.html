@@ -1,31 +1,32 @@
 <!DOCTYPE HTML>
-
 <html>
 
 <head>
     <title>Rafi Rahman</title>
+
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136152918-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
         gtag('js', new Date());
 
         gtag('config', 'UA-136152918-1');
     </script>
-    <script src="scripts/typeit.min.js"></script>
-    <!-- Background effect scripts -->
+    <!-- Effects resources -->
     <script src="scripts/three.min.js"></script>
     <script src="scripts/vanta.net.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    <script src="scripts/typeit.min.js"></script>
 
     <!-- Styling resources-->
     <link rel="stylesheet" type="text/css" href="index.css">
-    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans|DM+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
@@ -41,23 +42,21 @@
 
 <body>
     <div class="hero">
-        <img class="hero" id="profile" src="images/profile.JPG" alt="Profile picture">
-        <div class="text" id=intro>
-            <h1 class="big-text">Hey, I'm <strong><a href="mailto:hello@rafirahman.com" class="text-link">Rafi
-                        Rahman</a>.
-                </strong></h1>
-            <div class="big-text tagline">I'm a <span id="typer">creator.</span></div>
-            <!-- <h2 class="big-text">
-                I studied computer science at the University of Toronto.</h2> -->
-            <div class="small-text tagline"><strong>
-                    Hey! I'm <span id="typer-small">Rafi Rahman.</span>
+        <picture>
+            <source srcset="images/profile.webp" type="image/webp">
+            <source srcset="images/profile.jpeg" type="image/jpeg">
+            <img src="images/profile.jpeg" class="profile" alt="Profile picture">
+        </picture>
+        <div class="text">
+            <h1 class="big-text"> Hey, I'm <a href="mailto:hello@rafirahman.com" class="text-link">Rafi Rahman</a>.</h1>
+            <div class="big-text tagline"> I'm a <span id="typer-big">creator.</span></div>
+            <div class="small-text tagline">
+                <strong>
+                    Hey! I'm <span id="typer-small"><a href="mailto:hello@rafirahman.com" class="text-link">Rafi Rahman</a>.</span>
                 </strong>
             </div>
-            <!-- <h3 class="small-text">I'm a recent graduate from the University of Toronto.</h3> -->
-            <!-- <h3>I love <span id="typer">creating.</span></h3> -->
-            <h3>Here's my <a href="resume.html" class="text-link">resume</a>. </h3>
-            <h4>Say hi, and let's create together.</h4>
-            <!-- <h3>Feel free to say hi!</h3> -->
+            <h3> Here's my <a href="resume.html" class="text-link">resume</a>.</h3>
+            <h4> Say hi, and let's create together.</h4>
             <div class="social-links">
                 <a href="mailto:hello@rafirahman.com"><i class="sl fas fa-envelope"></i></a>
                 <a href="https://github.com/rahmanrafi"><i class="sl fab fa-github"></i></a>
@@ -67,14 +66,13 @@
             </div>
         </div>
     </div>
-
-    
-
 </body>
 
 <script>
-    const instance = new TypeIt('#typer', {
-        strings: ['University of Toronto grad.', 'coder.', 'tinkerer.', 'writer.', 'film geek.', 'dog lover.', 'big thinker.', 'creator.'],
+    const big_typer = new TypeIt('#typer-big', {
+        strings: ['University of Toronto grad.', 'coder.', 'tinkerer.', 'writer.', 'film geek.', 'dog lover.',
+            'big thinker.', 'creator.'
+        ],
         speed: 50,
         breakLines: false,
         waitUntilVisible: true,
@@ -83,10 +81,13 @@
         loopDelay: [100, 2500],
         startDelete: true,
         startDelay: 500
-    }).go();
+    });
 
-    const instance_small = new TypeIt('#typer-small', {
-        strings: ['a creator.', 'a UToronto grad.', 'a coder.', 'a tinkerer.', 'a writer.', 'a film geek.', 'a dog lover.', 'a big thinker.', "<strong><a href=\"mailto:hello@rafirahman.com\" class=\"text-link\">Rafi Rahman.</a>"],
+    const small_typer = new TypeIt('#typer-small', {
+        strings: ['a creator.', 'a UofT grad.', 'a coder.', 'a tinkerer.', 'a writer.', 'a film geek.',
+            'a dog lover.', 'a big thinker.',
+            "<strong><a href=\"mailto:hello@rafirahman.com\" class=\"text-link\">Rafi Rahman.</a>"
+        ],
         speed: 20,
         breakLines: false,
         waitUntilVisible: true,
@@ -95,7 +96,21 @@
         loopDelay: [100, 2500],
         startDelete: true,
         startDelay: 500
-    }).go();
+    });
+
+    current_typer = (screen.width <= 1080 ? small_typer : big_typer);
+    current_typer.go();
+
+    window.onresize = function(event){
+        current_typer.destroy();
+        console.log('[TypeIt]: Destroyed previous TypeIt instance');
+        if (screen.width <= 1080){
+            current_typer = small_typer;
+        } else {
+            current_typer = big_typer;
+        }
+        current_typer.go();
+    }
 </script>
 
 <script>
