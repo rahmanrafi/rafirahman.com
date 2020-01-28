@@ -98,30 +98,39 @@
         startDelay: 500
     });
 
-    current_typer = (screen.width <= 1080 ? small_typer : big_typer);
+    mobile_width = 1000;
+    current_typer = (window.innerWidth <= mobile_width ? small_typer : big_typer);
     current_typer.go();
 
-    window.onresize = function(event){
-        current_typer.destroy();
-        console.log('[TypeIt]: Destroyed previous TypeIt instance');
-        if (screen.width <= 1080){
-            current_typer = small_typer;
-        } else {
-            current_typer = big_typer;
-        }
-        current_typer.go();
-    }
-</script>
+    window.onresize = function () {
+        var refresh_flag = false;
 
-<script>
-    if (window.innerWidth < 600) {
+        if ((window.innerWidth <= mobile_width) && (current_typer != small_typer)) {
+            refresh_flag = true;
+            new_typer = small_typer;
+        } else if ((window.innerWidth > mobile_width) && (current_typer != big_typer)) {
+            refresh_flag = true;
+            new_typer = big_typer;
+        }
+
+        if (refresh_flag === true) {
+            console.log('Toggling alternate typer element')
+            // current_typer.empty();
+            current_typer.destroy();
+            current_typer = new_typer;
+            current_typer.go();
+        }
+
+    }
+
+    if (window.innerWidth <= 1000) {
         VANTA.NET({
             el: "body",
-            color: 0x6a6c72,
-            backgroundColor: 0x181718,
-            points: 20,
+            color: 0xaf0a75,
+            backgroundColor: 0x191c20,
+            points: 10,
             maxDistance: 12,
-            spacing: 16
+            spacing: 20
         })
     } else {
         VANTA.NET({
@@ -133,6 +142,10 @@
             spacing: 16
         })
     }
+</script>
+
+<script>
+
 </script>
 
 </html>
