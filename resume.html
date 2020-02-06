@@ -1,15 +1,204 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 
-    <head>
-        <title>Rafi Rahman - Resume</title>
-    </head>
+<head>
+  <meta charset="utf-8" />
+  <link href="https://fonts.googleapis.com/css?family=DM+Sans:400,700&display=swap" rel="stylesheet">
+  <!-- <link rel="stylesheet" type="text/css" href="dep/normalize.css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="dep/Font-Awesome/css/font-awesome.css" /> -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+  <link rel="stylesheet" type="text/css" href="resume-style.css" />
+  <title>Rafi Rahman - Resume</title>
+</head>
 
-    <body>
-        <object data="resume.pdf" type="application/pdf" style="position: absolute; width: 100%; height:100%; left: 0; top: 0">
-            <iframe src="https://docs.google.com/gview?url=https://rafirahman.com/resume.pdf&embedded=true"
-                style="position: absolute; width: 100%; height:100%; left: 0; top: 0;" frameborder="0"></iframe>
-        </object>
-    </body>
+<body lang="en">
+  <section id="main">
+    <header id="title">
+      <h1>Rafi <strong>Rahman</strong></h1>
+      <ul id="contact">
+        <li><i class="fa fa-at"></i> <a href="mailto:hello@rafirahman.com">hello@rafirahman.com</a></li>
+        <li><i class="fa fa-globe-americas"></i> <a href="https://rafirahman.com">rafirahman.com</a></li>
+        <li><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/rahmanrafi">/rahmanrafi</a></li>
+        <li><i class="fab fa-github"></i> <a href="https://github.com/rahmanrafi">/rahmanrafi</a></li>
+      </ul>
+      <br>
+      <span class="subtitle">Junior Developer<span
+          style="margin: 12px; font-size: 10px; color: rgba(68, 68, 68, 0.74);">●</span>Toronto</span>
+    </header>
+
+    <section class="main-block concise">
+      <h2>
+        <i class="fa fa-graduation-cap"></i> Education
+      </h2>
+      <section class="blocks">
+        <div class="date">
+          <span>Sept. 2014</span><span>Aug. 2019</span>
+        </div>
+        <div class="decorator">
+        </div>
+        <div class="details">
+          <header>
+            <h3>University of Toronto, St. George</h3>
+            <span class="place">Honours Bachelor of Science with Distinction | CGPA: 3.4</span>
+            <span class="location">Toronto, Ontario</span>
+            <div>Computer Science | Physical & Envrionmental Geography | History & Philosophy of Science & Technology
+            </div>
+          </header>
+          Dean's List, Winter 2016
+        </div>
+      </section>
+    </section>
+
+    <section class="main-block">
+      <h2>
+        <i class="fa fa-briefcase"></i> Work Experience
+      </h2>
+      <section class="blocks">
+        <div class="date">
+          <span>May 2018</span><span>Aug. 2018</span>
+        </div>
+        <div class="decorator">
+        </div>
+        <div class="details">
+          <header>
+            <h3><a target="_blank" rel="noopener noreferrer" href="https://rogers.com">Rogers Communications</a></h3>
+            <span class="place">Developer</span>
+            <span class="location">Toronto, Ontario</span>
+          </header>
+          <div>
+            <ul>
+              <li>Built and maintained supplementary frontend frameworks for CI/CD pipelines used by Sportsnet.ca, 680
+                News, and other major Canadian media brands. </li>
+              <li>Developed complimentary Node.js driven MySQL interface and associated database and schemas to track
+                various CI/CD stats.</li>
+              <li>Collaboratively developed Angular frontend for managine, visualizing, and querying CI/CD stats
+                database.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="blocks">
+        <div class="date">
+          <span>Feb. 2013</span><span>Jun. 2013</span>
+        </div>
+        <div class="decorator">
+        </div>
+        <div class="details">
+          <header>
+            <h3><a target="_blank" rel="noopener noreferrer" href="https://ocsb.ca">Ottawa Catholic School Board</a>
+            </h3>
+            <span class="place">Teaching Assistant</span>
+            <span class="location">Ottawa, Ontario</span>
+          </header>
+          <div>
+            <ul>
+              <li>Managed, organized, instructed, and administered behavior management policies for multiple elementary
+                classes of students aged 5 to 12.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section class="main-block">
+      <h2>
+        <i class="fa fa-folder-open"></i> Selected Projects
+      </h2>
+      <section class="blocks">
+        <div class="date">
+          <span>April 2019</span><span>Present</span>
+        </div>
+        <div class="decorator">
+        </div>
+        <div class="details">
+          <header>
+            <h3>Dockerized Web Server</h3>
+            <span class="place">Personal Project</span>
+          </header>
+          <div>
+            <ul>
+              <li>Deployment and management of ~20 Docker images/containers on Ubuntu for varied remote and local
+                functionality.</li>
+              <li>Configuration of strict HTTPS access control, double proxied via Cloudflare and local NGINX instance.
+              </li>
+              <li>Managed graphical dashboard visualizing various server and container metrics using Grafana with
+                InfluxDB.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="blocks">
+        <div class="date">
+          <span>Oct. 2017</span><span>Nov. 2017</span>
+        </div>
+        <div class="decorator">
+        </div>
+        <div class="details">
+          <header>
+            <h3><a target="_blank" rel="noopener noreferrer"
+                href="https://github.com/rahmanrafi/image-server">Multiprocessed BMP Filter Server</a></h3>
+            <span class="place">CSC209, Systems Programming</span>
+          </header>
+          <div>
+            <ul>
+              <li>Designed multiprocessed, multi-user HTTP server
+                developed in C99 to perform image filtering on server and/or client-side bitmap files, with strict
+                memory allocation guidelines.</li>
+              <li>Leveraged client-server communication through POSIX
+                APIs for forks/pipes, sockets, and binary R/W</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="blocks">
+        <div class="date">
+          <span>Sept. 2016</span><span>Nov. 2016</span>
+        </div>
+        <div class="decorator">
+        </div>
+        <div class="details">
+          <header>
+            <h3><a target="_blank" rel="noopener noreferrer"
+                href="https://github.com/rahmanrafi/image-tagger">Persistent Image Tag Manager</a></h3>
+            <span class="place">CSC207, Software Design</span>
+          </header>
+          <div>
+            <ul>
+              <li>Developed Java-based GUI program for searching, and organizing images found on a given filesystem.
+              </li>
+              <li>Enabled users to access and modify serializable image objects stored in recursive directories, and
+                perform queries at a later time.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <div id="skills-block">
+        <h2 id="skills-header">
+          <i class="fa fa-pencil-ruler"></i> Skills
+        </h2>
+        <div id="skills-list">
+          <span class="skill">Java</span>
+          <span class="skill">C99</span>
+          <span class="skill">Python</span>
+          <span class="skill">Verilog</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">Node.js</span>
+          <span class="skill">jQuery</span>
+          <span class="skill">CSS3</span>
+          <br>
+          <span class="skill">HTML5</span>
+          <span class="skill">MySQL</span>
+          <span class="skill">InfluxDB</span>
+          <span class="skill">Git</span>
+          <span class="skill">Bash/zsh</span>
+          <span class="skill">NGINX</span>
+          <span class="skill">Docker</span>
+          <span class="skill">ArcGIS</span>
+        </div>
+      </div>
+    </section>
+  </section>
+</body>
 
 </html>
