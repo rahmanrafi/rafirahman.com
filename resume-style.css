@@ -42,6 +42,27 @@ body {
   -moz-transform-origin: top;
 }
 
+#download-button{
+  padding: 2px 8px;
+  transition: background-color 250ms ease-in-out 0s, box-shadow 150ms ease-in-out 0s;
+  border-radius: 10px;
+  position: relative;
+  left: 192px;
+  display: initial;
+  background-color: rgb(207, 243, 255);
+  /* background-image: linear-gradient(to bottom, rgb(224, 247, 255), rgb(207, 243, 255)); */
+  box-shadow: 0px 0px 2px #3b3b3b41;
+}
+
+#download-button:hover{
+  background-color: rgb(187, 233, 248);
+  box-shadow: 0px 0px 5px #6b6b6b3f;
+}
+
+#dl-link {
+  box-shadow: none;
+}
+
 h1,
 h2,
 h3 {
@@ -211,9 +232,28 @@ a:hover {
   transform: rotate(45deg);
   margin-left: 3px;
   font-size: 10px;
-  color: rgba(36, 36, 36, 0.315);
+  color: rgb(36, 36, 36);
 
 }
+
+.dl-icon {
+  /* margin-right: 3px; */
+  font-size: 10px;
+  color: rgb(36, 36, 36);
+  /* background-color: white;
+  line-height: 6px; */
+}
+
+/* .dl-icon::after{
+  background:white;
+  width: 20px;
+  height: 21px;
+  position: absolute;
+  content:"";
+  top: 12px;
+  left:15px;
+  z-index:-1;
+} */
 
 /**** minor tweaks on the icon fonts ****/
 #main h2>.fa-graduation-cap {
@@ -221,12 +261,14 @@ a:hover {
   top: 2pt;
 }
 
-#main h2>.fa-suitcase {
-  top: 1pt;
+#main h2>.fa-briefcase {
+  top: 1.5pt;
+  left: -26px;
 }
 
-#main h2>.fa-folder-open {
+#main h2>.fa-window-maximize {
   top: 2pt;
+  left: -26px;
 }
 
 /**** individual row blocks (date - decorator - details) ****/
@@ -472,6 +514,10 @@ a:hover {
     margin-left: 0.25in;
     margin-top: 0.25in;
     /* margin-bottom: 0.1in; */
+  }
+
+  #dl-link{
+    display:none;
   }
 
   a {
