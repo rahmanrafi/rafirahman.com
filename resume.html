@@ -37,32 +37,37 @@
       </div>
     </header>
 
-    <section class="main-block concise">
+    <section class="main-block">
       <h2>
-        <i class="fa fa-graduation-cap"></i> Education
+        <i class="fa fa-graduation-cap"></i> <span class="section-title">Education</span>
       </h2>
       <section class="blocks">
         <div class="date">
-          <span>Sept. 2014</span><span>Aug. 2019</span>
+          <span>Sept. 2014</span><span>Nov. 2019</span>
         </div>
         <div class="decorator">
         </div>
         <div class="details">
           <header>
             <h3>University of Toronto, St. George</h3>
-            <span class="place">Honours Bachelor of Science with Distinction | CGPA: 3.4</span>
-            <span class="location">Toronto, Ontario</span>
-            <div>Computer Science | Physical & Envrionmental Geography | History & Philosophy of Science & Technology
+            <div class="job-details">
+              <span class="place">Honours Bachelor of Science with Distinction | CGPA: 3.4</span>
+              <span class="location">Toronto, Ontario</span>
             </div>
           </header>
-          Dean's List, Winter 2016
+          <div>
+            <ul>
+              <li>Fields of Study: Computer Science; Physical and Environmental Geography; History and Philosophy of Science and Technology.</li>
+              <li>Dean's List, Winter 2016.</li>
+            </ul>
+          </div>
         </div>
       </section>
     </section>
 
     <section class="main-block">
       <h2>
-        <i class="fa fa-briefcase"></i> Work Experience
+        <i class="fa fa-briefcase"></i> <span class="section-title">Work Experience</span>
       </h2>
       <section class="blocks">
         <div class="date">
@@ -73,17 +78,16 @@
         <div class="details">
           <header>
             <h3><a target="_blank" rel="noopener noreferrer" href="https://rogers.com">Rogers Communications</a></h3>
-            <span class="place">Developer</span>
-            <span class="location">Toronto, Ontario</span>
+            <div class="job-details">
+              <span class="place">Developer</span>
+              <span class="location">Toronto, Ontario</span>
+            </div>
           </header>
           <div>
             <ul>
-              <li>Developed Node.js driven MySQL interface and associated database/schemas to track
-                various CI/CD stats.</li>
-              <li>Built and maintained supplementary frontend frameworks for CI/CD pipelines used by Sportsnet.ca, 680
-                News, and other major Canadian media brands. </li>
-              <li>Collaboratively developed Angular frontend for managine, visualizing, and querying CI/CD stats
-                database.</li>
+              <li>Implemented and maintained frameworks for CI/CD pipelines for major media properties.</li>
+              <li>Developed Node.js MySQL interface and associated schemas tracking CI/CD results.</li>
+              <li>Launched Angular frontend for managing, visualizing, and querying database results.</li>
             </ul>
           </div>
         </div>
@@ -98,12 +102,15 @@
           <header>
             <h3><a target="_blank" rel="noopener noreferrer" href="https://ocsb.ca">Ottawa Catholic School Board</a>
             </h3>
-            <span class="place">Teaching Assistant</span>
-            <span class="location">Ottawa, Ontario</span>
+            <div class="job-details">
+              <span class="place">Teaching Assistant</span>
+              <span class="location">Ottawa, Ontario</span>
+            </div>
           </header>
           <div>
             <ul>
-              <li>Managed, organized, instructed, and administered behavior management policies for multiple elementary
+              <li>Collaboratively managed, organized, instructed, and administered behavior management policies for
+                multiple elementary
                 classes of students aged 5 to 12.</li>
             </ul>
           </div>
@@ -113,27 +120,30 @@
 
     <section class="main-block">
       <h2>
-        <i class="fa fa-window-maximize"></i> Selected Projects
+        <i class="fa fa-window-maximize"></i> <span class="section-title">Selected Projects</span>
       </h2>
       <section class="blocks">
         <div class="date">
-          <span>April 2019</span><span>Present</span>
+          <span>April 2019</span><span id="date-now">Present</span>
         </div>
         <div class="decorator">
         </div>
         <div class="details">
           <header>
             <h3>Dockerized Web Server</h3>
-            <span class="place">Personal Project</span>
           </header>
+          <div class="job-details">
+            <span class="place">Personal Project</span>
+          </div>
           <div>
             <ul>
-              <li>Deployment and management of ~20 Docker images/containers on Ubuntu for varied remote and local
-                functionality.</li>
-              <li>Configuration of strict HTTPS access control, double proxied via Cloudflare and local NGINX instance.
-              </li>
-              <li>Managed graphical dashboard visualizing various server and container metrics using Grafana with
+              <li>Deployed and managed 20+ Docker images on Ubuntu provisioning varied remote and local
+                functionality intended for personal use.</li>
+              <li>Implemented SSL certificates, authentication policies and reverse proxying in local NGINX instance and
+                HTTPS access, domain resolution, and edge caching through Cloudflare.</li>
+              <li>Managed graphical dashboard visualizing various server and container metrics using Grafana and
                 InfluxDB.</li>
+              <li>Configured local RESTful web service for controlling and querying various server properties.</li>
             </ul>
           </div>
         </div>
@@ -148,8 +158,10 @@
           <header>
             <h3><a target="_blank" rel="noopener noreferrer"
                 href="https://github.com/rahmanrafi/image-server">Multiprocessed BMP Filter Server</a></h3>
-            <span class="place">CSC209, Systems Programming</span>
           </header>
+          <div class="job-details">
+            <span class="place">University of Toronto, CSC209 - Systems Programming</span>
+          </div>
           <div>
             <ul>
               <li>Designed multiprocessed, multi-user HTTP server
@@ -171,8 +183,10 @@
           <header>
             <h3><a target="_blank" rel="noopener noreferrer"
                 href="https://github.com/rahmanrafi/image-tagger">Persistent Image Tag Manager</a></h3>
-            <span class="place">CSC207, Software Design</span>
           </header>
+          <div class="job-details">
+            <span class="place">University of Toronto, CSC207 - Software Design</span>
+          </div>
           <div>
             <ul>
               <li>Developed Java-based GUI program for searching, and organizing images found on a given filesystem.
@@ -183,32 +197,32 @@
           </div>
         </div>
       </section>
-
-      <div id="skills-block">
-        <h2 id="skills-header">
-          <i class="fa fa-pencil-ruler"></i> Skills
-        </h2>
-        <div id="skills-list">
-          <span class="skill">Java</span>
-          <span class="skill">C99</span>
-          <span class="skill">Python</span>
-          <span class="skill">Verilog</span>
-          <span class="skill">JavaScript</span>
-          <span class="skill">Node.js</span>
-          <span class="skill">jQuery</span>
-          <span class="skill">CSS3</span>
-          <br>
-          <span class="skill">HTML5</span>
-          <span class="skill">MySQL</span>
-          <span class="skill">InfluxDB</span>
-          <span class="skill">Git</span>
-          <span class="skill">Bash/zsh</span>
-          <span class="skill">NGINX</span>
-          <span class="skill">Docker</span>
-          <span class="skill">ArcGIS</span>
-        </div>
-      </div>
     </section>
+
+    <div id="skills-block">
+      <h2 id="skills-header">
+        <i class="fa fa-pencil-ruler"></i> <span class="section-title"></span>Skills
+      </h2>
+      <div id="skills-list">
+        <span class="skill">Java</span>
+        <span class="skill">Python</span>
+        <span class="skill">Git</span>
+        <span class="skill">Docker</span>
+        <span class="skill">REST</span>
+        <span class="skill">JavaScript</span>
+        <span class="skill">Node.js</span>
+        <span class="skill">jQuery</span>
+        <span class="skill">C99</span>
+        <span class="skill">Verilog</span>
+        <span class="skill">HTML5/CSS3</span>
+        <span class="skill">MySQL</span>
+        <span class="skill">InfluxDB</span>
+        <span class="skill">Bash</span>
+        <span class="skill">NGINX</span>
+        <span class="skill">ArcGIS</span>
+      </div>
+    </div>
+
   </section>
   <div class="download-button" id="dl-small">
     <i class="fas fa-file-pdf dl-icon"></i><span style="position:relative; margin-left: 5px">Download
