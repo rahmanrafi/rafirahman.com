@@ -190,7 +190,7 @@ a:hover {
   z-index: 0;
   line-height: 0;
   font-size: 0;
-  content: " ";
+  content: "";
 }
 
 #skills-block {
@@ -585,8 +585,13 @@ a:hover {
     margin-right: 35px;
     margin-top: 3px;
   }
+  #skills-block{
+    margin-top: 0.3in;
+  }
   #skills-list {
     font-size: 2vmin;
+    margin-left: 100px;
+    margin-top: 0px;
   }
   .skill {
     line-height: 40px;
@@ -609,7 +614,21 @@ a:hover {
     position: relative;
   }
   .date {
-    line-height: 1.5vmin;
+    line-height: 3vmin;
+    width: 100%;
+    font-size: 18px;
+  }
+  .date span:nth-child(2)::before {
+    top: -8px;
+    right: 16px;
+  }
+  .decorator::before{
+    top: 20.5px;
+    left: -7px;
+  }
+  .decorator::after{
+    top: 16px;
+    left: -5.5px;
   }
   #date-now {
     margin-left: -36px;
@@ -618,6 +637,9 @@ a:hover {
     margin: unset;
     padding-top: 10px;
     padding-bottom: 20px;
+  }
+  #main h2 > .fa-pencil-ruler{
+    top:-5px;
   }
   /* #main h2 > .fa-graduation-cap {
     position: relative;
@@ -634,7 +656,5 @@ a:hover {
     top: 2pt;
     left: -26px;
   } */
-  /* #main h2::after{
-  left: -12px;
-} */
+
 }
