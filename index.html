@@ -17,7 +17,7 @@
         gtag('config', 'UA-136152918-1');
     </script>
     <!-- Effects resources -->
-    <script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>
+    <!-- <script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script> -->
     <!-- <script src="https://unpkg.com/@barba/core"></script> -->
     <script src="scripts/three.min.js"></script>
     <script src="scripts/vanta.net.min.js"></script>
@@ -56,7 +56,7 @@
                                 Rahman</a>.</span>
                     </strong>
                 </div>
-                <h3> Here's my <a href="./resume" class="text-link transition-fade" id="resume-button">resume</a>.
+                <h3> Here's my <a href="./resume" class="text-link" id="resume-button">resume</a>.
                 </h3>
                 <h4> Say hi, and let's create together.</h4>
                 <div class="social-links">
@@ -137,40 +137,4 @@
         })
     }
 </script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-
-        // SWUP: enable swup
-        let options = {
-            LINK_SELECTOR: 'a[href^="' + window.location.origin +
-                '"]:not([data-no-swup]), a[href^="./"]:not([data-no-swup]), a[href^="#"]:not([data-no-swup])',
-            FORM_SELECTOR: 'form[data-swup-form]',
-            elements: [
-                '#swup'
-            ],
-            animationSelector: '[class*="transition-"]',
-            cache: true,
-            pageClassPrefix: '',
-            scroll: true,
-            debugMode: true,
-            preload: true,
-            support: true,
-            skipPopStateHandling: function (event) {
-                if (event.state && event.state.source == "swup") {
-                    return false;
-                }
-                return true;
-            },
-            animateHistoryBrowsing: false,
-        }
-        const swup = new Swup(options);
-
-        swup.on('animationOutDone', function () {
-            console.log("leave is done");
-        });
-
-    });
-</script>
-
 </html>
