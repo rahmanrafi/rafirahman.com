@@ -17,6 +17,8 @@
         gtag('config', 'UA-136152918-1');
     </script>
     <!-- Effects resources -->
+    <script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>
+    <!-- <script src="https://unpkg.com/@barba/core"></script> -->
     <script src="scripts/three.min.js"></script>
     <script src="scripts/vanta.net.min.js"></script>
     <script src="scripts/typeit.min.js"></script>
@@ -37,32 +39,36 @@
 </head>
 
 <body>
-    <div class="hero">
-        <picture>
-            <source srcset="images/profile.webp" type="image/webp">
-            <source srcset="images/profile.jpeg" type="image/jpeg">
-            <img src="images/profile.jpeg" class="profile" alt="Profile picture">
-        </picture>
-        <div class="text">
-            <h1 class="big-text"> Hey, I'm <a href="mailto:hello@rafirahman.com" class="text-link">Rafi Rahman</a>.</h1>
-            <div class="big-text tagline"> I'm a <span id="typer-big">creator.</span></div>
-            <div class="small-text tagline">
-                <strong>
-                    Hey! I'm <span id="typer-small"><a href="mailto:hello@rafirahman.com" class="text-link">Rafi
-                            Rahman</a>.</span>
-                </strong>
-            </div>
-            <h3> Here's my <a href="resume" class="text-link" id="resume-button">resume</a>.</h3>
-            <h4> Say hi, and let's create together.</h4>
-            <div class="social-links">
-                <a href="mailto:hello@rafirahman.com"><i class="sl fas fa-envelope"></i></a>
-                <a href="https://github.com/rahmanrafi"><i class="sl fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/rahmanrafi"><i class="sl fab fa-linkedin-in"></i></a>
-                <a href="https://twitter.com/duplr"><i class="sl fab fa-twitter"></i></a>
-                <a href="https://instagram.com/rafirahm"><i class="sl fab fa-instagram"></i></a>
+    <main id="swup" class="transition-fade">
+        <div class="hero">
+            <picture>
+                <source srcset="images/profile.webp" type="image/webp">
+                <source srcset="images/profile.jpeg" type="image/jpeg">
+                <img src="images/profile.jpeg" class="profile" alt="Profile picture">
+            </picture>
+            <div class="text">
+                <h1 class="big-text"> Hey, I'm <a href="mailto:hello@rafirahman.com" class="text-link">Rafi Rahman</a>.
+                </h1>
+                <div class="big-text tagline"> I'm a <span id="typer-big">creator.</span></div>
+                <div class="small-text tagline">
+                    <strong>
+                        Hey! I'm <span id="typer-small"><a href="mailto:hello@rafirahman.com" class="text-link">Rafi
+                                Rahman</a>.</span>
+                    </strong>
+                </div>
+                <h3> Here's my <a href="./resume" class="text-link transition-fade" id="resume-button">resume</a>.
+                </h3>
+                <h4> Say hi, and let's create together.</h4>
+                <div class="social-links">
+                    <a href="mailto:hello@rafirahman.com"><i class="sl fas fa-envelope"></i></a>
+                    <a href="https://github.com/rahmanrafi"><i class="sl fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/rahmanrafi"><i class="sl fab fa-linkedin-in"></i></a>
+                    <a href="https://twitter.com/duplr"><i class="sl fab fa-twitter"></i></a>
+                    <a href="https://instagram.com/rafirahm"><i class="sl fab fa-instagram"></i></a>
+                </div>
             </div>
         </div>
-    </div>
+    </main>
 </body>
 <script>
     const big_typer = new TypeIt('#typer-big', {
@@ -130,6 +136,41 @@
             spacing: 16
         })
     }
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        // SWUP: enable swup
+        let options = {
+            LINK_SELECTOR: 'a[href^="' + window.location.origin +
+                '"]:not([data-no-swup]), a[href^="./"]:not([data-no-swup]), a[href^="#"]:not([data-no-swup])',
+            FORM_SELECTOR: 'form[data-swup-form]',
+            elements: [
+                '#swup'
+            ],
+            animationSelector: '[class*="transition-"]',
+            cache: true,
+            pageClassPrefix: '',
+            scroll: true,
+            debugMode: true,
+            preload: true,
+            support: true,
+            skipPopStateHandling: function (event) {
+                if (event.state && event.state.source == "swup") {
+                    return false;
+                }
+                return true;
+            },
+            animateHistoryBrowsing: false,
+        }
+        const swup = new Swup(options);
+
+        swup.on('animationOutDone', function () {
+            console.log("leave is done");
+        });
+
+    });
 </script>
 
 </html>
