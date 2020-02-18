@@ -76,18 +76,16 @@ a.text-link:hover {
   padding-top: 2vmin;
 }
 
-.social-links > a:not(:last-child) {
+.social-links>a:not(:last-child) {
   margin-right: calc(20px + 4vmin);
 }
 
-.fab,
-.fas {
+.fab, .fas {
   font-size: calc(17px + 1.25vmin);
   color: white;
 }
 
-.fab:hover,
-.fas:hover {
+.fab:hover, .fas:hover {
   color: rgb(138, 125, 134);
 }
 
@@ -111,8 +109,6 @@ a.text-link:hover {
   }
   .hero {
     display: block;
-    /* transform: none;
-        top: inherit; */
     margin-left: 1px;
   }
   .profile {
@@ -141,19 +137,17 @@ a.text-link:hover {
     margin-right: 20px;
     margin-top: -2vmin;
   }
-
-  .fab,
-  .fas {
+  .fab, .fas {
     font-size: calc(16px + calc(4vmin - 10px));
   }
   .social-links {
     display: flex;
     padding-top: 3vmin;
   }
-  .social-links > a:not(:last-child) {
+  .social-links>a:not(:last-child) {
     margin-right: 10vmin;
   }
-  .social-links > a:last-child {
+  .social-links>a:last-child {
     margin-right: 20px;
   }
 }
@@ -164,28 +158,3 @@ a.text-link:hover {
     top: inherit;
   }
 }
-
-/* .text {
-        font-size: calc(10px + 1vh);
-    }
-
-    .fab,
-    .fas {
-        font-size: calc(12px + 2vh);
-    }
-
-    .social-links {
-        padding-top: 5vh;
-        padding-bottom: 10vh;
-    } */
-
-/* .social-links>a:not(:last-child) {
-        margin-right: 5vh;
-    } */
-
-/* #profile {
-        width: calc(75px + 15vh);
-        height: calc(75px + 15vh);
-        top: 5vh;
-    }
-} */

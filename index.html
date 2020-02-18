@@ -14,20 +14,17 @@
             dataLayer.push(arguments);
         }
         gtag('js', new Date());
-
         gtag('config', 'UA-136152918-1');
     </script>
     <!-- Effects resources -->
     <script src="scripts/three.min.js"></script>
     <script src="scripts/vanta.net.min.js"></script>
     <script src="scripts/typeit.min.js"></script>
-
     <!-- Styling resources-->
     <link rel="stylesheet" type="text/css" href="index.css">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png?v=2">
     <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png?v=2">
@@ -55,7 +52,7 @@
                             Rahman</a>.</span>
                 </strong>
             </div>
-            <h3> Here's my <a href="/resume" class="text-link">resume</a>.</h3>
+            <h3> Here's my <a href="#" class="text-link" id="resume-button">resume</a>.</h3>
             <h4> Say hi, and let's create together.</h4>
             <div class="social-links">
                 <a href="mailto:hello@rafirahman.com"><i class="sl fas fa-envelope"></i></a>
@@ -67,7 +64,6 @@
         </div>
     </div>
 </body>
-
 <script>
     const big_typer = new TypeIt('#typer-big', {
         strings: ['University of Toronto grad.', 'coder.', 'tinkerer.', 'writer.', 'film geek.', 'dog lover.',
@@ -82,7 +78,6 @@
         startDelete: true,
         startDelay: 500
     });
-
     const small_typer = new TypeIt('#typer-small', {
         strings: ['a creator.', 'a UofT grad.', 'a coder.', 'a tinkerer.', 'a writer.', 'a film geek.',
             'a dog lover.', 'a big thinker.',
@@ -97,14 +92,11 @@
         startDelete: true,
         startDelay: 500
     });
-
     mobile_width = 1000;
     current_typer = (window.innerWidth <= mobile_width ? small_typer : big_typer);
     current_typer.go();
-
     window.onresize = function () {
         var refresh_flag = false;
-
         if ((window.innerWidth <= mobile_width) && (current_typer != small_typer)) {
             refresh_flag = true;
             new_typer = small_typer;
@@ -112,17 +104,13 @@
             refresh_flag = true;
             new_typer = big_typer;
         }
-
         if (refresh_flag === true) {
             console.log('Toggling alternate typer element')
-            // current_typer.empty();
             current_typer.destroy();
             current_typer = new_typer;
             current_typer.go();
         }
-
     }
-
     if (window.innerWidth <= 1000) {
         VANTA.NET({
             el: "body",
@@ -142,10 +130,6 @@
             spacing: 16
         })
     }
-</script>
-
-<script>
-
 </script>
 
 </html>
