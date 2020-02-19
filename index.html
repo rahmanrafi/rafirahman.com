@@ -40,7 +40,11 @@
 </head>
 
 <body>
-    <div class="animsition-overlay hero" data-animsition-overlay="true">
+    <div class="bottom-layer"></div>
+    <div class="bottom-layer bottom-layer--2"></div>
+    <div class="bottom-layer bottom-layer--3"></div>
+
+    <div class="animsition-overlay-no hero" data-animsition-overlay="true">
         <picture>
             <source srcset="res/images/profile.webp" type="image/webp">
             <source srcset="res/images/profile.jpeg" type="image/jpeg">
@@ -56,7 +60,7 @@
                             Rahman</a>.</span>
                 </strong>
             </div>
-            <h3> Here's my <a href="./resume" class="text-link animsition-link" id="resume-button">resume</a>.
+            <h3> Here's my <a href="./resume.html" class="text-link animsition-link" id="resume-button">resume</a>.
             </h3>
             <h4> Say hi, and let's create together.</h4>
             <div class="social-links">
@@ -138,30 +142,26 @@
 </script>
 
 <script>
-$(document).ready(function() {
-  $(".animsition-overlay").animsition({
-    inClass: 'overlay-slide-in-top',
-    outClass: 'overlay-slide-out-bottom',
-    inDuration: 0,
-    outDuration: 275,
-    linkElement: '.animsition-link',
-    // e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
-    loading: false,
-    loadingParentElement: 'body', //animsition wrapper element
-    loadingClass: 'animsition-loading',
-    loadingInner: '', // e.g '<img src="loading.svg" />'
-    timeout: false,
-    timeoutCountdown: 5000,
-    onLoadEvent: true,
-    browser: [ 'animation-duration', '-webkit-animation-duration'],
-    // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
-    // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
-    overlay : true,
-    overlayClass : 'animsition-overlay-slide',
-    overlayParentElement : 'body',
-    transition: function(url){ window.location.href = url; }
-  });
-});
+    $(document).ready(function () {
+        if ($('.bottom-layer').hasClass('active')) {
+            var layers = document.querySelectorAll(".bottom-layer");
+            for (const layer of layers) {
+                layer.classList.toggle();
+            }
+        }
+    })
+    const resume_button = document.getElementById("resume-button")
+    resume_button.onclick = function (e) {
+        e.preventDefault();
+        var href = $(this).attr('href');
+        var layers = document.querySelectorAll(".bottom-layer");
+        for (const layer of layers) {
+            layer.classList.toggle("active");
+        }
+        $('.bottom-layer--3').on('transitionend webkitTransitionEnd', function(){
+            window.location = href;
+        })
+    }
 </script>
 
 </html>
