@@ -16,59 +16,59 @@
         gtag('js', new Date());
         gtag('config', 'UA-136152918-1');
     </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Effects resources -->
-    <!-- <script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script> -->
-    <!-- <script src="https://unpkg.com/@barba/core"></script> -->
-    <script src="scripts/three.min.js"></script>
-    <script src="scripts/vanta.net.min.js"></script>
-    <script src="scripts/typeit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/js/animsition.min.js"
+        integrity="sha256-8y2mv4ETTGZLMlggdrgmCzthTVCNXGUdCQe1gd8qkyM=" crossorigin="anonymous"></script>
+    <script src="res/js/three.min.js"></script>
+    <script src="res/js/vanta.net.min.js"></script>
+    <script src="res/js/typeit.min.js"></script>
     <!-- Styling resources-->
-    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" href="res/css/animsition.min.css">
+    <link rel="stylesheet" type="text/css" href="res/css/index.css">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png?v=2">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png?v=2">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png?v=2">
-    <link rel="manifest" href="favicons/site.webmanifest?v=2">
-    <link rel="mask-icon" href="favicons/safari-pinned-tab.svg?v=2" color="#5bbad5">
-    <link rel="shortcut icon" href="favicons/favicon.ico?v=2">
+    <link rel="apple-touch-icon" sizes="180x180" href="res/favicons/apple-touch-icon.png?v=2">
+    <link rel="icon" type="image/png" sizes="32x32" href="res/favicons/favicon-32x32.png?v=2">
+    <link rel="icon" type="image/png" sizes="16x16" href="res/favicons/favicon-16x16.png?v=2">
+    <link rel="manifest" href="res/favicons/site.webmanifest?v=2">
+    <link rel="mask-icon" href="res/favicons/safari-pinned-tab.svg?v=2" color="#5bbad5">
+    <link rel="shortcut icon" href="res/favicons/favicon.ico?v=2">
     <meta name="msapplication-TileColor" content="#603cba">
     <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
-    <main id="swup" class="transition-fade">
-        <div class="hero">
-            <picture>
-                <source srcset="images/profile.webp" type="image/webp">
-                <source srcset="images/profile.jpeg" type="image/jpeg">
-                <img src="images/profile.jpeg" class="profile" alt="Profile picture">
-            </picture>
-            <div class="text">
-                <h1 class="big-text"> Hey, I'm <a href="mailto:hello@rafirahman.com" class="text-link">Rafi Rahman</a>.
-                </h1>
-                <div class="big-text tagline"> I'm a <span id="typer-big">creator.</span></div>
-                <div class="small-text tagline">
-                    <strong>
-                        Hey! I'm <span id="typer-small"><a href="mailto:hello@rafirahman.com" class="text-link">Rafi
-                                Rahman</a>.</span>
-                    </strong>
-                </div>
-                <h3> Here's my <a href="./resume" class="text-link" id="resume-button">resume</a>.
-                </h3>
-                <h4> Say hi, and let's create together.</h4>
-                <div class="social-links">
-                    <a href="mailto:hello@rafirahman.com"><i class="sl fas fa-envelope"></i></a>
-                    <a href="https://github.com/rahmanrafi"><i class="sl fab fa-github"></i></a>
-                    <a href="https://linkedin.com/in/rahmanrafi"><i class="sl fab fa-linkedin-in"></i></a>
-                    <a href="https://twitter.com/duplr"><i class="sl fab fa-twitter"></i></a>
-                    <a href="https://instagram.com/rafirahm"><i class="sl fab fa-instagram"></i></a>
-                </div>
+    <div class="animsition-overlay hero" data-animsition-overlay="true">
+        <picture>
+            <source srcset="res/images/profile.webp" type="image/webp">
+            <source srcset="res/images/profile.jpeg" type="image/jpeg">
+            <img src="res/images/profile.jpeg" class="profile" alt="Profile picture">
+        </picture>
+        <div class="text">
+            <h1 class="big-text"> Hey, I'm <a href="mailto:hello@rafirahman.com" class="text-link">Rafi Rahman</a>.
+            </h1>
+            <div class="big-text tagline"> I'm a <span id="typer-big">creator.</span></div>
+            <div class="small-text tagline">
+                <strong>
+                    Hey! I'm <span id="typer-small"><a href="mailto:hello@rafirahman.com" class="text-link">Rafi
+                            Rahman</a>.</span>
+                </strong>
+            </div>
+            <h3> Here's my <a href="./resume.html" class="text-link animsition-link" id="resume-button">resume</a>.
+            </h3>
+            <h4> Say hi, and let's create together.</h4>
+            <div class="social-links">
+                <a href="mailto:hello@rafirahman.com"><i class="sl fas fa-envelope"></i></a>
+                <a href="https://github.com/rahmanrafi"><i class="sl fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/rahmanrafi"><i class="sl fab fa-linkedin-in"></i></a>
+                <a href="https://twitter.com/duplr"><i class="sl fab fa-twitter"></i></a>
+                <a href="https://instagram.com/rafirahm"><i class="sl fab fa-instagram"></i></a>
             </div>
         </div>
-    </main>
+    </div>
 </body>
 <script>
     const big_typer = new TypeIt('#typer-big', {
@@ -137,4 +137,32 @@
         })
     }
 </script>
+
+<script>
+$(document).ready(function() {
+  $(".animsition-overlay").animsition({
+    inClass: 'overlay-slide-in-top',
+    outClass: 'overlay-slide-out-bottom',
+    inDuration: 0,
+    outDuration: 275,
+    linkElement: '.animsition-link',
+    // e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
+    loading: false,
+    loadingParentElement: 'body', //animsition wrapper element
+    loadingClass: 'animsition-loading',
+    loadingInner: '', // e.g '<img src="loading.svg" />'
+    timeout: false,
+    timeoutCountdown: 5000,
+    onLoadEvent: true,
+    browser: [ 'animation-duration', '-webkit-animation-duration'],
+    // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+    // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+    overlay : true,
+    overlayClass : 'animsition-overlay-slide',
+    overlayParentElement : 'body',
+    transition: function(url){ window.location.href = url; }
+  });
+});
+</script>
+
 </html>

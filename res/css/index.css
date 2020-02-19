@@ -11,15 +11,14 @@ body {
   z-index: 1;
 }
 
-/* .transition-fade {
-  transition: all 0.4s;
-  animation: .5s scalein ease forwards;
-  opacity: 1;
+.overlay-slide-in-top {
+  opacity: 0;
 }
 
-html.is-animating .transition-fade {
-  opacity: 0;
-} */
+.animsition-overlay-slide {
+    z-index: 2;
+    background-color: #ffffff
+}
 
 .profile {
   position: relative;
