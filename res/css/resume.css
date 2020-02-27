@@ -8,7 +8,7 @@
 }
 
 :root {
-  --page-width: 8in;
+  --page-width: 8.5in;
   --page-height: 11in;
   --decorator-horizontal-margin: 0.2in;
   --sidebar-horizontal-padding: 0.2in;
@@ -28,25 +28,18 @@
 
 body {
   color: #444;
-  /* display: flex; */
   font-family: "DM Sans", sans-serif;
   font-weight: 300;
   line-height: 1.75;
   margin: auto;
   width: var(--page-width);
-  /* max-width: 800px; */
-  /* zoom: 150%;
-  -moz-transform: scale(1.5);
-  -moz-transform-origin: top; */
 }
 
 body, body * {
   max-height: 10000000px;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   color: #000;
   margin: 0;
 }
@@ -75,7 +68,8 @@ a:hover {
   border-radius: 15px;
   box-shadow: 0px 1px 5px #3b3b3b2a;
   display: initial;
-  left: 300px;
+  float: right;
+  left: -5%;
   padding: 3px 15px;
   position: relative;
   transition: background-color 250ms ease-in-out 0s, box-shadow 150ms ease-in-out 0s;
@@ -100,7 +94,7 @@ a:hover {
 }
 
 .subheading {
-  display: contents;
+  display: inline;
 }
 
 #main #contact {
@@ -110,19 +104,6 @@ a:hover {
   float: right;
   line-height: 1.5rem;
 }
-
-/* #contact ul {
-  font-family: "Source Code Pro";
-  font-weight: 400;
-  line-height: 1.75;
-  margin-top: 255in;
-  padding-left: 0;
-} */
-
-/* #contact li>i {
-  text-align: right;
-  width: 9pt;
-} */
 
 #interpunct {
   color: rgba(68, 68, 68, 0.74);
@@ -151,7 +132,6 @@ a:hover {
   line-height: 1.5;
   text-transform: uppercase;
   text-shadow: var(--drop-shadow);
-
 }
 
 #title h1 strong {
@@ -357,10 +337,11 @@ a:hover {
   font-size: 1.25rem;
 }
 
-.job-details{
+.job-details {
   font-size: 0.95rem;
   color: rgb(90, 90, 90);
 }
+
 .details .place {
   float: left;
   margin-bottom: 0.05in;
@@ -408,156 +389,122 @@ MOBILE VIEWPORTS
 */
 
 @media screen AND (max-width: 1000px) {
-
-  :root{
+  :root {
     --decorator-outer-offset-top: 35px;
   }
-
   body {
     margin-left: 5%;
     width: 100%;
     margin-bottom: 5%;
   }
-  
-
   html {
     font-size: 4vw !important;
   }
-
   #title {
     left: 90px;
   }
-
-  #title h1{
+  #title h1 {
     font-size: 2.5rem;
   }
-
-  .subtitle{
+  .subtitle {
     margin-left: 10px;
     font-size: 1rem;
   }
-
-  #dl-big{
+  #dl-big {
     display: none;
   }
-
   .download-button, #dl-small {
     display: inline;
-    width: fit-content;
     box-shadow: 0px 0px 5px #33333379;
     font-size: 1rem;
+    float: unset;
     left: 2%;
     margin-left: 10px;
   }
-
-  #dl-small>i{
+  #dl-small>i {
     font-size: 0.9rem;
     margin-right: 10px;
   }
-
-  #interpunct{
+  #interpunct {
     position: relative;
     font-size: 0.3rem;
     top: -5px;
     margin: 0px 25px 0px 25px;
   }
-
-  #main #contact{
+  #main #contact {
     float: unset;
   }
-
-  #main h2{
+  #main h2 {
     width: fit-content;
     left: 134px;
   }
-
-  #main h2>i{
+  #main h2>i {
     top: 20px !important;
     left: -35px !important;
     font-size: 1.2rem;
   }
-
-  #main h2::after{
+  #main h2::after {
     border-left: unset;
   }
-
-  .section-title{
+  .section-title {
     margin-left: 45px;
   }
-
-  .decorator::after{
+  .decorator::after {
     font-size: 0.4rem;
     top: calc(var(--decorator-outer-offset-top) + 3px);
     left: -8px;
   }
-
-  .date{
+  .date {
     flex: 0.17;
     max-width: 125px;
   }
-
-  .details{
+  .details {
     padding-left: 57px;
   }
-
   .details .place {
     float: unset;
   }
-
   .details .location::before {
     top: -2.5px;
     right: 10px;
     font-size: 0.8rem
   }
-
-  #skills-block{
-    /* display: block; */
-  }
-
-  #skills-list-container{
+  #skills-list-container {
     left: 60px;
     display: flex;
     width: 90%;
   }
-
-  #skills-list{
+  #skills-list {
     height: 100%;
-    width:65%;
+    width: 65%;
     display: inline-flex;
     overflow-x: scroll;
     padding-left: 20px;
     top: -12px;
     left: 47px;
-    /* left: 145px; */
-    
   }
-
-  #skills-list::after{
+  #skills-list::after {
     content: "";
     padding: 4px;
   }
-  
   .skill {
     line-height: 0;
     border: 1px solid rgb(161, 161, 161);
     padding: 26px 20px;
-    margin-right : 15px;
+    margin-right: 15px;
     font-size: 0.9rem;
     margin-top: 30px;
   }
-
-  #skills-list-container::before{
+  #skills-list-container::before {
     content: "";
     position: absolute;
     z-index: 100;
     height: 100px;
     width: 40px;
     left: 327px;
-    /* bottom: 0; */
     background: linear-gradient(to right, white 35%, rgba(255, 255, 255, 0) 100%);
   }
-
-  #skills-list-container::after{
+  #skills-list-container::after {
     content: "";
     position: absolute;
     z-index: 100;
@@ -567,145 +514,7 @@ MOBILE VIEWPORTS
     /* bottom: 0; */
     background: linear-gradient(to left, white 35%, rgba(255, 255, 255, 0) 100%);
   }
-
-
-/*
-  #main {
-    font-size: 1.5rem;
-    line-height: 1.75;
-    margin-left: 0.5in;
-    width: 100%;
-  }
-
-  .subheading {
-    display: flex;
-    flex-direction: column-reverse;
-  }
-
-  .subtitle {
-    font-size: 2rem;
-  }
-
-  #interpunct {
-    font-size: 2rem;
-  }*/
-
-
-
-  /* .download-button>.dl-icon {
-    font-size: 2rem;
-    left: unset !important;
-  } */
-/*
-  #title h1 {
-    display: block;
-    font-size: 5rem;
-  }
-
-  #main h2 {
-    font-size: 2.75rem;
-  }
-
-  #main h2::after {
-    border-left: unset;
-  }
-
-  #main h2>.fa,
-  .fas {
-    left: -35px !important;
-    position: relative !important;
-  }
-
-  #main h2>.fa-pencil-ruler {
-    top: -5px;
-  }
-
-  #main #contact {
-    float: none;
-    font-size: 2rem;
-    line-height: 3rem;
-    padding-left: 0px;
-  }
-
-  #main #contact li {
-    display: flex;
-    margin-right: 1vmin;
-  }
-
-  #contact li>i {
-    font-size: 2rem;
-    margin-right: 35px;
-    margin-top: 10px;
-  }
-
-  .details h3 {
-    font-size: 2rem;
-  }
-
-  .details .location::before {
-    font-size: 2.25rem;
-  }
-
-  #job-details {
-    display: contents;
-  }
-
-  .section-title {
-    margin-left: -20px;
-  }
-
-  .main-block:not(.concise) .details .job-details {
-    display: grid;
-    margin: unset;
-    padding-top: 10px;
-  }
-
-  #main .place,
-  .location {
-    float: unset !important;
-    font-size: 1.75rem;
-  }
-
-  .date {
-    font-size: 1.5rem;
-    line-height: 2.25rem;
-    width: 100%;
-  }
-
-  .date span:nth-child(2)::before {
-    right: 16px;
-    top: -8px;
-  }
-
-  #date-now {
-    margin-left: -36px;
-  }
-
-  .decorator::before {
-    left: -7px;
-    top: 20.5px;
-  }
-
-  .decorator::after {
-    left: -5.5px;
-    top: 16px;
-  }
-
-  #skills-block {
-    margin-top: 0.3in;
-  }
-
-  #skills-list {
-    font-size: 1.5rem;
-    margin-left: 100px;
-    margin-top: 0px;
-  }
-
-  .skill {
-    line-height: 40px;
-  }
-
-} */
+}
 
 /* 
 FOR PRINTING TO PDF 
@@ -713,21 +522,26 @@ FOR PRINTING TO PDF
 
 @media print {
   body {
-    width: 100%;
-    zoom: 112%;
+    width: 8.5in;
+    margin-left: 0.5in;
   }
-
+  :root{
+    font-size: 9pt;
+    --decorator-border:1px solid #ccc;
+  }
   #main {
-    margin-left: 0.25in;
-    margin-right: 0.5in;
     margin-top: 0.25in;
     width: 8.5in;
   }
-
   #dl-link {
     display: none;
   }
-
+  #title>h1{
+    font-size: 2.6rem;
+  }
+  .main-block{
+    margin-top: unset;
+  }
   a {
     box-shadow: none;
   }
