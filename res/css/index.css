@@ -1,4 +1,7 @@
 body {
+  position: absolute;
+  height: 100%;
+  width: 100%;
   margin: 0;
   background-color: #191c20;
 }
@@ -158,15 +161,20 @@ a.text-link:hover {
 
 @media screen AND (max-width: 1000px) {
   @media (max-height: 600px) {
-    .hero {
+    /* .hero {
       transform: none;
       top: 20px;
-    }
+    } */
   }
   .big-text {
     display: none;
   }
   .hero {
+    transform: none;
+    position: absolute;
+    top: auto;
+    bottom: 3%;
+    left: 3%;
     display: block;
     margin-left: 1px;
   }
@@ -184,7 +192,7 @@ a.text-link:hover {
     margin-bottom: 5vmin;
   }
   .small-text {
-    display: inline-flex;
+    display: block;
   }
   h3 {
     font-size: calc(18px + calc(4vmin - 10px));
@@ -194,7 +202,7 @@ a.text-link:hover {
   h4 {
     font-size: calc(16px + calc(3vmin - 10px));
     margin-right: 20px;
-    margin-top: -2vmin;
+    margin-top: 0;
   }
   .fab, .fas {
     font-size: calc(16px + calc(4vmin - 10px));
@@ -214,6 +222,6 @@ a.text-link:hover {
 @media screen AND (max-height: 320px) AND (min-width: 751px) {
   .hero {
     transform: none;
-    top: inherit;
+    top: 5%;
   }
 }

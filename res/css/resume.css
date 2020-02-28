@@ -2,18 +2,35 @@
   box-sizing: border-box;
 }
 
+#emergency-button{
+  color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(0,0,0,0.4);
+    padding: 1px 10px;
+    border-radius: 4px;
+    font-weight: normal;
+    background: #3f89ca;
+    white-space: nowrap;
+    margin: 0 2px;
+    display: inline-block;
+}
+
 body .buorg {
   background-color: rgb(253, 253, 223);
   font: 15px "DM Sans", Arial, Helvetica, sans-serif;
   animation: 500ms cubic-bezier(0.62, 0.67, 0, 1.0) 0s buorgfly
 }
 
-body #buorgul, body #buorgig{
+body #buorgul, body #buorgig, #emergency-button{
   border-radius: 20px;
 }
 
 body #buorgig{
-  background-color: #bbbe97;
+  color: rgb(134, 134, 134);
+  /* background-color: #bbbe97; */
+  box-shadow: initial;
+  background-color: initial;
 }
 
 .animsition-overlay-slide {
