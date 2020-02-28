@@ -2,6 +2,20 @@
   box-sizing: border-box;
 }
 
+body .buorg {
+  background-color: rgb(253, 253, 223);
+  font: 15px "DM Sans", Arial, Helvetica, sans-serif;
+  animation: 500ms cubic-bezier(0.62, 0.67, 0, 1.0) 0s buorgfly
+}
+
+body #buorgul, body #buorgig{
+  border-radius: 20px;
+}
+
+body #buorgig{
+  background-color: #bbbe97;
+}
+
 .animsition-overlay-slide {
   background-color: rgb(255, 255, 255);
   z-index: 2

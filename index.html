@@ -140,7 +140,6 @@
         })
     }
 </script>
-
 <script>
     $(document).ready(function () {
         if ($('.bottom-layer').hasClass('active')) {
@@ -158,10 +157,38 @@
         for (const layer of layers) {
             layer.classList.toggle("active");
         }
-        $('.bottom-layer--3').on('transitionend webkitTransitionEnd', function(){
+        $('.bottom-layer--3').on('transitionend webkitTransitionEnd', function () {
             window.location = href;
         })
     }
 </script>
+
+<script>
+    var $buoop = {
+        required: {
+            e: -4,
+            f: -3,
+            o: -3,
+            s: -1,
+            c: -3
+        },
+        insecure: true,
+        style: "top",
+        api: 2020.02,
+        test: false,
+        text: "<b>Your browser ({brow_name}) is out of date.</b>  <a{up_but}>Update</a> <a{ignore_but}>Ignore</a>"
+    };
+  
+    function $buo_f() {
+        var e = document.createElement("script");
+        e.src = "//browser-update.org/update.min.js";
+        document.body.appendChild(e);
+    };
+    try {
+        document.addEventListener("DOMContentLoaded", $buo_f, false)
+    } catch (e) {
+        window.attachEvent("onload", $buo_f)
+    }
+  </script>
 
 </html>
