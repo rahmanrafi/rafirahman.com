@@ -71,7 +71,7 @@ body, body * {
   margin: auto;
 }
 .animsition-overlay-slide {
-  background-color: #854168;
+  background-color: rgb(137, 163, 190);
   z-index: 2
 }
 
@@ -547,7 +547,7 @@ MOBILE VIEWPORTS
     z-index: 100;
     height: 100px;
     width: 40px;
-    left: 327px;
+    left: 30%;
     background: linear-gradient(to right, white 35%, rgba(255, 255, 255, 0) 100%);
   }
   #skills-list-container::after {
