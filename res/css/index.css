@@ -59,7 +59,7 @@ body #buorgig{
 }
 .bottom-layer--2 {
   z-index: 3;
-  background: #ffffff;
+  background: #854168;
   transition-delay: 0s;
   transition: all 0.75s cubic-bezier(0.645, 0.045, 0.25, 1);
 }

@@ -71,7 +71,7 @@ body, body * {
   margin: auto;
 }
 .animsition-overlay-slide {
-  background-color: rgb(231, 42, 42);
+  background-color: #854168;
   z-index: 2
 }
 
@@ -429,7 +429,7 @@ MOBILE VIEWPORTS
     --decorator-outer-offset-top: 35px;
   }
   body {
-    margin-left: 5%;
+    /* margin-left: 5%; */
     width: 100%;
     margin-bottom: 5%;
   }
@@ -445,6 +445,16 @@ MOBILE VIEWPORTS
   .subtitle {
     margin-left: 10px;
     font-size: 1rem;
+  }
+  .animsition-overlay{
+    width: 100%;
+    margin: unset;
+  }
+  #main{
+    position: absolute;
+    left: 0.75in;
+    top: 0.25in;
+    padding: unset;
   }
   #dl-big {
     display: none;
