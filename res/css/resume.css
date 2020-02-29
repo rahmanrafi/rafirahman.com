@@ -2,6 +2,25 @@
   box-sizing: border-box;
 }
 
+:root {
+  --page-width: 8.5in;
+  --page-height: 11in;
+  --decorator-horizontal-margin: 0.2in;
+  --sidebar-horizontal-padding: 0.2in;
+  --decorator-outer-offset-top: 10px;
+  --decorator-outer-offset-left: -15px;
+  --decorator-border-width: 1px;
+  --decorator-outer-dim: 25px;
+  --decorator-border: 2px solid #ccc;
+  --row-blocks-padding-top: 5pt;
+  --date-block-width: 0.75in;
+  --main-blocks-title-icon-offset-left: -21pt;
+  --color-accent-heavy: rgb(178, 231, 247);
+  --color-accent-light: rgb(205, 243, 255);
+  --drop-shadow: 1px 2px 6px #00000034;
+  font-size: 11pt;
+}
+
 #emergency-button{
   color: #fff;
     text-decoration: none;
@@ -33,41 +52,34 @@ body #buorgig{
   background-color: initial;
 }
 
-.animsition-overlay-slide {
-  background-color: rgb(255, 255, 255);
-  z-index: 2
-}
-
-:root {
-  --page-width: 8.5in;
-  --page-height: 11in;
-  --decorator-horizontal-margin: 0.2in;
-  --sidebar-horizontal-padding: 0.2in;
-  --decorator-outer-offset-top: 10px;
-  --decorator-outer-offset-left: -15px;
-  --decorator-border-width: 1px;
-  --decorator-outer-dim: 25px;
-  --decorator-border: 2px solid #ccc;
-  --row-blocks-padding-top: 5pt;
-  --date-block-width: 0.75in;
-  --main-blocks-title-icon-offset-left: -21pt;
-  --color-accent-heavy: rgb(178, 231, 247);
-  --color-accent-light: rgb(205, 243, 255);
-  --drop-shadow: 1px 2px 6px #00000034;
-  font-size: 11pt;
-}
-
 body {
+  /* display: flex; */
   color: #444;
   font-family: "DM Sans", sans-serif;
   font-weight: 300;
   line-height: 1.75;
   margin: auto;
-  width: var(--page-width);
+  width: 100%;
 }
 
 body, body * {
   max-height: 10000000px;
+}
+
+.animsition-overlay{
+  width: 8.5in;
+  margin: auto;
+}
+.animsition-overlay-slide {
+  background-color: rgb(231, 42, 42);
+  z-index: 2
+}
+
+#main {
+  float: left;
+  font-size: 1rem;
+  padding: 0.1in 0.25in 0 0.25in;
+  width: 100%;
 }
 
 h1, h2, h3 {
@@ -140,13 +152,6 @@ a:hover {
   color: rgba(68, 68, 68, 0.74);
   font-size: 1rem;
   margin: 12px
-}
-
-#main {
-  float: left;
-  font-size: 1rem;
-  padding: 0.1in 0.25in 0 0.25in;
-  width: 100%;
 }
 
 #title {
