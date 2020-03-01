@@ -160,18 +160,21 @@ a.text-link:hover {
 /* Narrow (i.e. mobile) viewports */
 
 @media screen AND (max-width: 1000px) {
-  @media (max-height: 600px) {
-    /* .hero {
+  /* @media (max-height: 600px) {
+    .hero {
       transform: none;
       top: 20px;
-    } */
+    }
+  } */
+  body{
+    position: fixed;
   }
   .big-text {
     display: none;
   }
   .hero {
     transform: none;
-    position: absolute;
+    position: fixed;
     top: auto;
     bottom: 3%;
     left: 3%;
@@ -181,7 +184,6 @@ a.text-link:hover {
   .profile {
     position: relative;
     padding: 0px;
-    border-radius: 25%;
     width: 25vmin;
     height: 25vmin;
     min-width: 70px;

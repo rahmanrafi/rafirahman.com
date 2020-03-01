@@ -25,7 +25,7 @@
     <!-- Styling resources-->
     <link rel="stylesheet" href="res/css/animsition.min.css">
     <link rel="stylesheet" type="text/css" href="res/css/index.css">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <!-- Favicons -->
@@ -56,11 +56,10 @@
             <div class="big-text tagline"> I'm a <span id="typer-big">creator.</span></div>
             <div class="small-text tagline">
                 <strong>
-                    Hey! I'm <span id="typer-small"><a href="mailto:hello@rafirahman.com" class="text-link">Rafi
-                            Rahman</a>.</span>
+                    Hey! I'm <span id="typer-small"><a href="mailto:hello@rafirahman.com" class="text-link">Rafi Rahman</a>.</span>
                 </strong>
             </div>
-            <h3> Here's my <a href="./resume.html" class="text-link animsition-link" id="resume-button">resume</a>.
+            <h3> Here's my <a href="./resume" class="text-link animsition-link" id="resume-button">resume</a>.
             </h3>
             <h4> Say hi, and let's create together.</h4>
             <div class="social-links">
@@ -96,10 +95,10 @@
         breakLines: false,
         waitUntilVisible: true,
         loop: true,
-        nextStringDelay: 1500,
+        nextStringDelay: 2500,
         loopDelay: [100, 2500],
         startDelete: true,
-        startDelay: 500
+        startDelay: 1500
     });
     mobile_width = 1000;
     current_typer = (window.innerWidth <= mobile_width ? small_typer : big_typer);
