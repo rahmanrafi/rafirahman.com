@@ -437,7 +437,7 @@ MOBILE VIEWPORTS
     font-size: 4vw !important;
   }
   #title {
-    left: 90px;
+    left: 7vw;
   }
   #title h1 {
     font-size: 2.5rem;
@@ -504,9 +504,9 @@ MOBILE VIEWPORTS
     flex: 0.17;
     max-width: 125px;
   }
-  .details {
+  /* .details {
     padding-left: 57px;
-  }
+  } */
   .details .place {
     float: unset;
   }
