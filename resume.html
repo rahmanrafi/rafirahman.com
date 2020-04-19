@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <title>Rafi Rahman - Resume</title>
   <meta name="description" content="Rafi Rahman's academic background, work experience, skillset, and more.">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=DM+Sans:400,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="res/css/animsition.min.css">
   <link rel="stylesheet" type="text/css" href="res/css/resume.css" />
@@ -28,26 +28,41 @@
   <div class="animsition-overlay" data-animsition-overlay="true">
     <section id="main">
       <header id="title">
-        <h1>Rafi <strong>Rahman</strong></h1>
+        <h1><span id="firstname">Rafi</span> <strong>Rahman</strong></h1>
         <div class="subheading">
-          <ul id="contact">
+          <ul class="contact" id="contact-big">
             <li><i class="fa fa-at"></i> <a href="mailto:hello@rafirahman.com">hello@rafirahman.com</a></li>
             <li><i class="fa fa-globe-americas"></i> <a href="https://rafirahman.com">rafirahman.com</a></li>
             <li><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/rahmanrafi">/rahmanrafi</a></li>
             <li><i class="fab fa-github"></i> <a href="https://github.com/rahmanrafi">/rahmanrafi</a></li>
-
           </ul>
+          <div class="contact" id="contact-small">
+            <div class="cs-col" id="cs-col-1">
+              <li><i class="fa fa-at"></i> <a href="mailto:hello@rafirahman.com">hello@rafirahman.com</a></li>
+              <li><i class="fa fa-globe-americas"></i> <a href="https://rafirahman.com">rafirahman.com</a></li>
+            </div>
+            <div class="cs-col" id="cs-col-2">
+              <li><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/rahmanrafi">/rahmanrafi</a></li>
+              <li><i class="fab fa-github"></i> <a href="https://github.com/rahmanrafi">/rahmanrafi</a></li>
+            </div>
+          </div>
           <br>
           <div id="secondary-title">
             <span class="subtitle">Software Developer<span id="interpunct">●</span>Toronto</span>
             <a href="resume.pdf" download="Rafi Rahman - Resume" id="dl-link">
               <div class="download-button" id="dl-big">
-                <i class="fas fa-file-pdf dl-icon"></i><span style="position:relative; margin-left: 5px">Download
-                  PDF</span>
+                <i class="fas fa-file-pdf dl-icon"></i><span style="position:relative; margin-left: 8px">Download PDF</span>
               </div>
               <div class="download-button" id="dl-small">
-                <i class="fas fa-file-download dl-icon"></i><span
-                  style="position:relative; margin-left: 5px">.pdf</span>
+                <svg class="svg-icon" id="dl-icon-small">
+                  <use xlink:href="#dl-svg">
+                    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="dl-svg">                      
+                      <path
+                        d="M17.016 12.984h-3v-3.984h-4.031v3.984h-3l5.016 5.016zM19.359 10.031q1.922 0.141 3.281 1.57t1.359 3.398q0 2.063-1.477 3.539t-3.539 1.477h-12.984q-2.484 0-4.242-1.758t-1.758-4.242q0-2.203 1.57-3.961t3.773-1.992q0.984-1.828 2.766-2.953t3.891-1.125q2.531 0 4.711 1.781t2.648 4.266z">
+                      </path>
+                    </symbol>
+                  </use>
+                </svg>
               </div>
             </a>
           </div>
@@ -68,7 +83,8 @@
             <header>
               <h3>University of Toronto, St. George</h3>
               <div class="job-details">
-                <span class="place">Honours Bachelor of Science with Distinction | CGPA: 3.4</span>
+                <span class="place vwb-place">Honours Bachelor of Science with Distinction | CGPA: 3.4</span>
+                <span class="place vws-place">Honours Bachelor of Science with Distinction <br> CGPA: 3.4</span>
                 <span class="location">Toronto, Ontario</span>
               </div>
             </header>
@@ -223,6 +239,7 @@
           <i class="fa fa-pencil-ruler"></i> <span class="section-title">Skills</span>
         </h2>
         <div id="skills-list-container">
+          <div class="decorator"></div>
           <div id="skills-list">
             <span class="skill">Java</span>
             <span class="skill">Python</span>
@@ -248,6 +265,23 @@
 </body>
 
 <script>
+  var prevYOffset = window.pageYOffset;
+  window.onscroll = function () {
+    var button = document.getElementById("dl-small");
+    if(window.pageYOffset == 0 || prevYOffset - 20 > window.pageYOffset) {
+      button.style.visibility = "visible";
+      button.style.opacity = 1;
+      button.style.bottom = "3.5%"
+    } else if (prevYOffset < window.pageYOffset){
+      button.style.visibility = "hidden";
+      button.style.opacity = 0;
+      button.style.bottom = "5%"
+    }
+    prevYOffset = window.pageYOffset;
+  };
+</script>
+
+<script>
   $(document).ready(function () {
     $(".animsition-overlay").animsition({
       inClass: 'overlay-slide-in-top',
@@ -255,17 +289,14 @@
       inDuration: 250,
       outDuration: 400,
       linkElement: '.animsition-link',
-      // e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
       loading: false,
-      loadingParentElement: 'body', //animsition wrapper element
+      loadingParentElement: 'body',
       loadingClass: 'animsition-loading',
-      loadingInner: '', // e.g '<img src="loading.svg" />'
+      loadingInner: '',
       timeout: false,
       timeoutCountdown: 5000,
       onLoadEvent: true,
       browser: ['animation-duration', '-webkit-animation-duration'],
-      // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
-      // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
       overlay: true,
       overlayClass: 'animsition-overlay-slide',
       overlayParentElement: 'body',
@@ -278,29 +309,29 @@
 
 <script>
   var $buoop = {
-      required: {
-          e: -4,
-          f: -3,
-          o: -3,
-          s: -1,
-          c: -3
-      },
-      insecure: true,
-      style: "top",
-      api: 2020.02,
-      test: false,
-      text: "<b>Your browser ({brow_name}) is outdated and may break this page.</b> <a{up_but}>Update</a> <a href=\"resume.pdf\" id=\"emergency-button\">View PDF</a> <a{ignore_but}>Ignore</a>"
+    required: {
+      e: -4,
+      f: -3,
+      o: -3,
+      s: -1,
+      c: -3
+    },
+    insecure: true,
+    style: "top",
+    api: 2020.02,
+    test: false,
+    text: "<b>Your browser ({brow_name}) is outdated and may break this page.</b> <a{up_but}>Update</a> <a href=\"resume.pdf\" id=\"emergency-button\">View PDF</a> <a{ignore_but}>Ignore</a>"
   };
 
   function $buo_f() {
-      var e = document.createElement("script");
-      e.src = "//browser-update.org/update.min.js";
-      document.body.appendChild(e);
+    var e = document.createElement("script");
+    e.src = "//browser-update.org/update.min.js";
+    document.body.appendChild(e);
   };
   try {
-      document.addEventListener("DOMContentLoaded", $buo_f, false)
+    document.addEventListener("DOMContentLoaded", $buo_f, false)
   } catch (e) {
-      window.attachEvent("onload", $buo_f)
+    window.attachEvent("onload", $buo_f)
   }
 </script>
 
