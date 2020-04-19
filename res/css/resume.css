@@ -41,9 +41,7 @@ body .buorg {
     animation: 500ms cubic-bezier(0.62, 0.67, 0, 1.0) 0s buorgfly
 }
 
-body #buorgul,
-body #buorgig,
-#emergency-button {
+body #buorgul, body #buorgig, #emergency-button {
     border-radius: 20px;
 }
 
@@ -62,8 +60,7 @@ body {
     width: 100%;
 }
 
-body,
-body * {
+body, body * {
     max-height: 10000000px;
 }
 
@@ -71,6 +68,7 @@ body * {
     width: 8.5in;
     margin: auto;
 }
+
 .animsition-overlay-slide {
     background-color: rgb(137, 163, 190);
     z-index: 2
@@ -83,9 +81,7 @@ body * {
     width: 100%;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
     color: #000;
     margin: 0;
 }
@@ -206,7 +202,7 @@ a:hover {
     top: var(--row-blocks-padding-top);
 }
 
-#main h2 > i {
+#main h2>i {
     color: #444;
     left: var(--main-blocks-title-icon-offset-left);
     position: absolute;
@@ -226,17 +222,17 @@ a:hover {
     z-index: 0;
 }
 
-#main h2 > .fa-graduation-cap {
+#main h2>.fa-graduation-cap {
     left: -30px;
     top: 5px;
 }
 
-#main h2 > .fa-briefcase {
+#main h2>.fa-briefcase {
     left: -27px;
     top: 5px;
 }
 
-#main h2 > .fa-window-maximize {
+#main h2>.fa-window-maximize {
     left: -27px;
     top: 5px;
 }
@@ -277,7 +273,7 @@ a:hover {
     flex-flow: row nowrap;
 }
 
-.blocks > div {
+.blocks>div {
     padding-top: var(--row-blocks-padding-top);
 }
 
@@ -442,253 +438,249 @@ a:hover {
 MOBILE VIEWPORTS 
 */
 
-@media screen AND(max-width: 500px){:root {
-    --decorator-outer-offset-top: 15px;
-    font-size: 14pt
-}
-body {
-
-    width: 100%;
-    margin-bottom: 5%;
-}
-
-#title {
-    left: 7vw;
-    margin-bottom: unset;
-    margin-top: 6px;
-    width: 92%;
-}
-#title h1 {
-    display: block;
-    line-height: 1.25em;
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-}
-.subheading {
-    display: inline-block;
-}
-.subtitle {
-    position: relative;
-    font-size: 0.9rem;
-    margin-right: 30px;
-}
-.animsition-overlay {
-    width: 100%;
-    margin: unset;
-}
-#main {
-    padding: 0.1in 0.5in 0 0.33in;
-}
-#dl-big {
-    display: none;
-}
-.download-button,
-#dl-small {
-    position: fixed;
-    display: inline;
-    box-shadow: 0 0 13px #4c4c4c91;
-    border-radius: 50%;
-    padding: 16px;
-    font-size: 1rem;
-    bottom: 3.5%;
-    right: 7%;
-    left: unset;
-    margin-left: unset;
-    z-index: 200;
-    opacity: 1;
-    transition: visibility 150ms ease-in-out, opacity 100ms ease-in-out, bottom 100ms ease-in-out;
-}
-
-#dl-small #dl-icon-small {
-    width: 2rem;
-    height: 2rem;
-    stroke-width: 0;
-    stroke: currentColor;
-    fill: currentColor;
-}
-
-#interpunct {
-    position: relative;
-    font-size: 0.6rem;
-    top: -0.1rem;
-}
-#main #contact-big {
-    display: none;
-}
-#main #contact-small {
-    padding-left: 1px;
-    font-size: 0.83rem;
-    float: unset;
-    column-gap: 25px;
-    display: flex;
-    flex-wrap: wrap;
-}
-#main #contact-small .cs-col {
-    margin-right: 20px;
-}
-#main #contact-small #cs-col-2 {
-    margin-right: 0
-}
-#main h2 {
-    width: fit-content;
-    left: 34px;
-    font-size: 1.15rem;
-}
-#main h2 > i {
-    font-size: 1.2rem;
-    position: unset;
-}
-#main h2::after {
-    border-left: unset;
-    height: 4px;
-}
-#main h2 > .fa-graduation-cap {
-    left: -2px;
-    margin-right: -2px;
-    top: unset;
-    position: relative;
-}
-.main-block {
-    margin-top: 0.1in;
-}
-.main-block:not(:last-child) {
-    width: fit-content;
-}
-#main .blocks ul {
-    font-size: 0.85rem;
-}
-.date {
-    max-width: 40px;
-    margin: 0 15px 0 -11px;
-    font-size: 0.75rem;
-}
-.details {
-    padding-left: 17px;
-}
-.details .place {
-    float: unset;
-}
-.details .vwb-place {
-    display: none;
-}
-.details .vws-place {
-    display: inline;
-}
-.details .location::before {
-    right: 0.5rem;
-    font-size: 0.8rem
-}
-.details h3 {
-    font-size: 1rem;
-}
-.job-details {
-    font-size: 0.8rem;
-}
-.section-title {
-    margin-left: 6px;
-    margin-right: 8px;
-}
-#skills-block {
-    display: block;
-}
-#skills-block #skills-header {
-    z-index: 101;
-    display: block;
-    top: unset;
-}
-#skills-header .section-title {
-    z-index: 101;
-    margin-top: -10px;
-}
-#skills-list-container {
-    left: 60px;
-    display: inline-flex;
-    width: 80%;
-    position: relative;
-    right: 30px;
-    bottom: 32px;
-}
-#skills-list {
-    height: 100%;
-    width: 80%;
-    display: inline-flex;
-    overflow-x: scroll;
-    margin-left: 20px;
-    top: -3px;
-    left: 35px;
-}
-#skills-list::after {
-    content: "";
-    padding: 4px;
-}
-.skill {
-    height: fit-content;
-    line-height: normal;
-    border: 1px solid rgb(161, 161, 161);
-    padding: 1px 5px;
-    margin-right: 9px;
-    font-size: 0.9rem;
-    border-radius: 20px;
-}
-.skill:first-child {
-    margin-left: 15px;
-}
-#skills-list-container::before {
-    content: "";
-    position: absolute;
-    z-index: 100;
-    height: 30px;
-    width: 40px;
-    left: 37px;
-    background: linear-gradient(to right, white 60%, rgba(255, 255, 255, 0) 100%);
-}
-#skills-list-container::after {
-    content: "";
-    position: relative;
-    z-index: 100;
-    height: 30px;
-    width: 25px;
-    left: 20px;
-    background: linear-gradient(to left, white 60%, rgba(255, 255, 255, 0) 100%);
-}
-@media screen AND(max-width: 400px) {
-    #skills-block {
+@media screen AND (max-width: 500px) {   
+    :root {
+        --decorator-outer-offset-top: 15px;
+        font-size: 14pt
+    }
+    body {
+        width: 100%;
+        margin-bottom: 5%;
+    }
+    #title {
+        left: 7vw;
+        margin-bottom: unset;
+        margin-top: 6px;
+        width: 92%;
+    }
+    #title h1 {
+        display: block;
+        line-height: 1.25em;
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+    }
+    .subheading {
         display: inline-block;
     }
-    #skills-list-container {
-        left: 44px;
-        bottom: 0;
-        width: 95%;
+    .subtitle {
+        position: relative;
+        font-size: 0.9rem;
+        margin-right: 30px;
     }
-    #skills-list-container .decorator {
+    .animsition-overlay {
+        width: 100%;
+        margin: unset;
+    }
+    #main {
+        padding: 0.1in 0.5in 0 0.33in;
+    }
+    #dl-big {
+        display: none;
+    }
+    .download-button, #dl-small {
+        position: fixed;
+        display: inline;
+        box-shadow: 0 0 13px #4c4c4c91;
+        border-radius: 50%;
+        padding: 16px;
+        font-size: 1rem;
+        top: unset;
+        bottom: 3.5%;
+        right: 7%;
+        left: unset;
+        margin-left: unset;
+        z-index: 200;
+        opacity: 1;
+        transition: visibility 150ms ease-in-out, opacity 100ms ease-in-out, bottom 100ms ease-in-out;
+    }
+    #dl-small #dl-icon-small {
+        width: 2rem;
+        height: 2rem;
+        stroke-width: 0;
+        stroke: currentColor;
+        fill: currentColor;
+    }
+    #interpunct {
+        position: relative;
+        font-size: 0.6rem;
+        top: -0.1rem;
+    }
+    #main #contact-big {
+        display: none;
+    }
+    #main #contact-small {
+        padding-left: 1px;
+        font-size: 0.83rem;
+        float: unset;
+        column-gap: 25px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #main #contact-small .cs-col {
+        margin-right: 20px;
+    }
+    #main #contact-small #cs-col-2 {
+        margin-right: 0
+    }
+    #main h2 {
+        width: fit-content;
+        left: 34px;
+        font-size: 1.15rem;
+    }
+    #main h2>i {
+        font-size: 1.2rem;
+        position: unset;
+    }
+    #main h2::after {
+        border-left: unset;
+        height: 4px;
+    }
+    #main h2>.fa-graduation-cap {
+        left: -2px;
+        margin-right: -2px;
+        top: unset;
+        position: relative;
+    }
+    .main-block {
+        margin-top: 0.1in;
+    }
+    .main-block:not(:last-child) {
+        width: fit-content;
+    }
+    #main .blocks ul {
+        font-size: 0.85rem;
+    }
+    .date {
+        max-width: 40px;
+        margin: 0 15px 0 -11px;
+        font-size: 0.75rem;
+    }
+    .details {
+        padding-left: 17px;
+    }
+    .details .place {
+        float: unset;
+    }
+    .details .vwb-place {
+        display: none;
+    }
+    .details .vws-place {
+        display: inline;
+    }
+    .details .location::before {
+        right: 0.5rem;
+        font-size: 0.8rem
+    }
+    .details h3 {
+        font-size: 1rem;
+    }
+    .job-details {
+        font-size: 0.8rem;
+    }
+    .section-title {
+        margin-left: 6px;
+        margin-right: 8px;
+    }
+    #skills-block {
+        margin-top: 0.2in;
         display: block;
-        margin-bottom: 0.25in;
     }
-    #skills-list-container .decorator::before,
-    #skills-list-container .decorator::after {
-        display: none;
+    #skills-block #skills-header {
+        z-index: 101;
+        display: block;
+        top: unset;
     }
-    #skills-list-container::before,
-    ::after {
-        display: none;
+    #skills-header .section-title {
+        z-index: 101;
+        margin-top: -10px;
+    }
+    #skills-list-container {
+        left: 60px;
+        display: inline-flex;
+        width: 80%;
+        position: relative;
+        right: 30px;
+        bottom: 32px;
     }
     #skills-list {
-        display: block;
-        overflow-x: unset;
-        top: 0;
-        left: 0;
-        width: 100%;
+        height: 100%;
+        width: 80%;
+        display: inline-flex;
+        overflow-x: scroll;
+        margin-left: 20px;
+        top: -3px;
+        left: 35px;
     }
-    .skill:first-child {
-        margin-left: 0;
+    #skills-list::after {
+        content: "";
+        padding: 4px;
     }
     .skill {
-        font-size: 0.8rem;
-        line-height: 2rem;
-        padding: 3px 8px;
-        margin-right: 5px;
+        height: fit-content;
+        line-height: normal;
+        border: 1px solid rgb(161, 161, 161);
+        padding: 1px 5px;
+        margin-right: 9px;
+        font-size: 0.9rem;
+        border-radius: 20px;
     }
-}
+    .skill:first-child {
+        margin-left: 15px;
+    }
+    #skills-list-container::before {
+        content: "";
+        position: absolute;
+        z-index: 100;
+        height: 30px;
+        width: 40px;
+        left: 37px;
+        background: linear-gradient(to right, white 60%, rgba(255, 255, 255, 0) 100%);
+    }
+    #skills-list-container::after {
+        content: "";
+        position: relative;
+        z-index: 100;
+        height: 30px;
+        width: 25px;
+        left: 20px;
+        background: linear-gradient(to left, white 60%, rgba(255, 255, 255, 0) 100%);
+    }
+    @media screen AND (max-width: 400px) {
+        #skills-block {
+            display: inline-block;
+        }
+        #skills-list-container {
+            left: 44px;
+            bottom: 0;
+            width: 95%;
+        }
+        #skills-list-container .decorator {
+            display: block;
+            margin-bottom: 0.25in;
+        }
+        #skills-list-container .decorator::before, #skills-list-container .decorator::after {
+            display: none;
+        }
+        #skills-list-container::before, ::after {
+            display: none;
+        }
+        #skills-list {
+            display: block;
+            overflow-x: unset;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+        .skill:first-child {
+            margin-left: 0;
+        }
+        .skill {
+            font-size: 0.8rem;
+            line-height: 2rem;
+            padding: 3px 8px;
+            margin-right: 5px;
+        }
+    }
 }
 
 /* 
@@ -696,28 +688,28 @@ FOR PRINTING TO PDF
 */
 
 @media print {
-body {
-    width: 8.5in;
-    margin-left: 0.5in;
-}
-:root {
-    font-size: 9pt;
-    --decorator-border: 1px solid #ccc;
-}
-#main {
-    margin-top: 0.25in;
-    width: 8.5in;
-}
-#dl-link {
-    display: none;
-}
-#title > h1 {
-    font-size: 2.6rem;
-}
-.main-block {
-    margin-top: unset;
-}
-a {
-    box-shadow: none;
-}
+    body {
+        width: 8.5in;
+        margin-left: 0.5in;
+    }
+    :root {
+        font-size: 9pt;
+        --decorator-border: 1px solid #ccc;
+    }
+    #main {
+        margin-top: 0.25in;
+        width: 8.5in;
+    }
+    #dl-link {
+        display: none;
+    }
+    #title>h1 {
+        font-size: 2.6rem;
+    }
+    .main-block {
+        margin-top: unset;
+    }
+    a {
+        box-shadow: none;
+    }
 }
