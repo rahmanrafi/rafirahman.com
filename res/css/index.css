@@ -181,7 +181,7 @@ a.text-link:hover {
   .profile {
     position: relative;
     padding: 0px;
-    border-radius: 25%;
+    border-radius: 50%;
     width: 25vmin;
     height: 25vmin;
     min-width: 70px;
