@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    /* outline: solid #f00 1px !important; */
 }
 
 :root {
@@ -77,7 +78,7 @@ body, body * {
 #main {
     float: left;
     font-size: 1rem;
-    padding: 0.1in 0.5in 0;
+    padding: 0.1in 0.25in 0.1in 0.45in;
     width: 100%;
 }
 
@@ -102,6 +103,7 @@ a:hover {
 }
 
 #secondary-title {
+    display: inline;
     padding-bottom: 10px;
 }
 
@@ -110,9 +112,8 @@ a:hover {
     border-radius: 15px;
     box-shadow: 0 1px 5px #3b3b3b2a;
     display: initial;
-    float: right;
     top: -4px;
-    left: -9%;
+    left: 42%;
     padding: 4px 13px;
     position: relative;
     transition: background-color 250ms ease-in-out 0s, box-shadow 150ms ease-in-out 0s;
@@ -142,15 +143,16 @@ a:hover {
 
 #main .contact {
     font-size: 0.95rem;
-    display: inline-block;
+    display: inline-flex;
     columns: 2;
-    float: right;
-    line-height: 1.5rem;
-    padding-left: 0.25rem
+    line-height: 1.75rem;
+    position: relative;
+    left: 7%;
+    top: -25px;
 }
 
-#main #contact-small {
-    display: none;
+#main #cs-col-1 {
+    margin-right: 25px;
 }
 
 #interpunct {
@@ -164,6 +166,7 @@ a:hover {
     line-height: 1.2;
     margin-bottom: 0.2in;
     position: relative;
+    width: 100%;
 }
 
 #title h1 {
@@ -438,7 +441,7 @@ a:hover {
 MOBILE VIEWPORTS 
 */
 
-@media screen AND (max-width: 500px) {   
+@media screen AND (max-width: 500px) {
     :root {
         --decorator-outer-offset-top: 15px;
         font-size: 14pt
@@ -451,7 +454,7 @@ MOBILE VIEWPORTS
         left: 7vw;
         margin-bottom: unset;
         margin-top: 6px;
-        width: 92%;
+        width: 89%;
     }
     #title h1 {
         display: block;
@@ -472,7 +475,7 @@ MOBILE VIEWPORTS
         margin: unset;
     }
     #main {
-        padding: 0.1in 0.5in 0 0.33in;
+        padding: 0.1in 0.25in 0 0.33in;
     }
     #dl-big {
         display: none;
@@ -485,8 +488,8 @@ MOBILE VIEWPORTS
         padding: 16px;
         font-size: 1rem;
         top: unset;
-        bottom: 3.5%;
-        right: 7%;
+        bottom: 2.5%;
+        right: 5%;
         left: unset;
         margin-left: unset;
         z-index: 200;
@@ -495,7 +498,7 @@ MOBILE VIEWPORTS
     }
     #dl-small #dl-icon-small {
         width: 2rem;
-        height: 2rem;
+        height: 1.7rem;
         stroke-width: 0;
         stroke: currentColor;
         fill: currentColor;
@@ -505,10 +508,9 @@ MOBILE VIEWPORTS
         font-size: 0.6rem;
         top: -0.1rem;
     }
-    #main #contact-big {
-        display: none;
-    }
-    #main #contact-small {
+    #main .contact {
+        left: unset;
+        top: unset;
         padding-left: 1px;
         font-size: 0.83rem;
         float: unset;
@@ -516,11 +518,8 @@ MOBILE VIEWPORTS
         display: flex;
         flex-wrap: wrap;
     }
-    #main #contact-small .cs-col {
-        margin-right: 20px;
-    }
-    #main #contact-small #cs-col-2 {
-        margin-right: 0
+    #main #cs-col-1 {
+        margin-right: 5vw;
     }
     #main h2 {
         width: fit-content;
@@ -543,6 +542,9 @@ MOBILE VIEWPORTS
     }
     .main-block {
         margin-top: 0.1in;
+    }
+    .main-block:first-of-type{
+        margin-top: 0.2in;
     }
     .main-block:not(:last-child) {
         width: fit-content;
@@ -690,14 +692,15 @@ FOR PRINTING TO PDF
 @media print {
     body {
         width: 8.5in;
-        margin-left: 0.5in;
+        margin: 0;
     }
     :root {
-        font-size: 9pt;
+        font-size: 9.5pt;
         --decorator-border: 1px solid #ccc;
     }
     #main {
-        margin-top: 0.25in;
+        margin: 0.1in 0.1in 0.1in 0.25in;
+        padding: unset;
         width: 8.5in;
     }
     #dl-link {
@@ -706,10 +709,27 @@ FOR PRINTING TO PDF
     #title>h1 {
         font-size: 2.6rem;
     }
+    #main .contact {
+        float: right;
+        font-size: 10pt;
+        line-height: 31px;
+        margin-top: 7px;
+        margin-bottom: 0px;
+        margin-right: -7px;
+        column-gap: 44px;
+    }
     .main-block {
         margin-top: unset;
     }
     a {
         box-shadow: none;
+    }
+    .decorator::after {
+        color-adjust: exact !important;
+        -webkit-print-color-adjust: exact !important;
+        left: calc(var(--decorator-outer-offset-left) + 5.5px);
+    }
+    #skills-block {
+        margin-bottom: 0px;
     }
 }
