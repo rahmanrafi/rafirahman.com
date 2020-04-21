@@ -1,6 +1,5 @@
 * {
     box-sizing: border-box;
-    /* outline: solid #f00 1px !important; */
 }
 
 :root {
@@ -78,7 +77,6 @@ body, body * {
 #main {
     float: left;
     font-size: 1rem;
-    /* margin-right: 100px; */
     padding: 0.1in 0.6in 0.1in 0.4in;
     width: 100%;
 }
@@ -165,11 +163,9 @@ a:hover {
 
 #title {
     padding-left: 8%;
-    /* left: 0.6in; */
     line-height: 1.2;
     margin-bottom: 0.2in;
     position: relative;
-    /* width: 95%; */
 }
 
 #title h1 {
@@ -523,7 +519,6 @@ MOBILE VIEWPORTS
         column-gap: 25px;
         display: flex;
         flex-wrap: wrap;
-        /* margin-right: 17px; */
     }
     #main #cs-col-1 {
         margin-right: 5vw;
@@ -553,7 +548,7 @@ MOBILE VIEWPORTS
     .main-block {
         margin-top: 0.1in;
     }
-    .main-block:first-of-type{
+    .main-block:first-of-type {
         margin-top: 0.2in;
     }
     .main-block:not(:last-child) {
