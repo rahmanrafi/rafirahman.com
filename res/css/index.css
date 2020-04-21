@@ -12,11 +12,11 @@ body .buorg {
   animation: 500ms cubic-bezier(0.62, 0.67, 0, 1.0) 0s buorgfly
 }
 
-body #buorgul, body #buorgig{
+body #buorgul, body #buorgig {
   border-radius: 20px;
 }
 
-body #buorgig{
+body #buorgig {
   background-color: #bbbe97;
 }
 
@@ -33,16 +33,17 @@ body #buorgig{
 }
 
 .animsition-overlay-slide {
-    z-index: 2;
-    background-color: aqua;
+  z-index: 2;
+  background-color: aqua;
 }
 
-.container{
+.container {
   position: fixed;
   z-index: 3;
 }
+
 .bottom-layer {
-  display:block;
+  display: block;
   z-index: 5;
   position: fixed;
   width: 100%;
@@ -54,18 +55,22 @@ body #buorgig{
   background: rgb(19, 61, 95);
   transition: all 0.6s cubic-bezier(0.645, 0.045, 0.755, 1);
 }
+
 .bottom-layer.active {
   top: -100%;
 }
+
 .bottom-layer--2 {
   z-index: 3;
   background: rgb(137, 163, 190);
   transition-delay: 0s;
   transition: all 0.75s cubic-bezier(0.645, 0.045, 0.25, 1);
 }
-.bottom-layer--2.active{
-  top:0%;
+
+.bottom-layer--2.active {
+  top: 0%;
 }
+
 .bottom-layer--3 {
   z-index: 4;
   background: rgb(53, 93, 126);
@@ -160,13 +165,7 @@ a.text-link:hover {
 /* Narrow (i.e. mobile) viewports */
 
 @media screen AND (max-width: 1000px) {
-  /* @media (max-height: 600px) {
-    .hero {
-      transform: none;
-      top: 20px;
-    }
-  } */
-  body{
+  body {
     position: fixed;
   }
   .big-text {

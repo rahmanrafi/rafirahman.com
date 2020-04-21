@@ -462,7 +462,6 @@ MOBILE VIEWPORTS
         line-height: 1.25em;
         font-size: 2.5rem;
         margin-bottom: 15px;
-        /* margin-right: 14px; */
     }
     .subheading {
         display: inline-block;
@@ -483,17 +482,18 @@ MOBILE VIEWPORTS
         display: none;
     }
     .download-button, #dl-small {
+        display: block;
         position: fixed;
-        display: inline;
+        width: unset;
         box-shadow: 0 0 13px #4c4c4c91;
         border-radius: 50%;
-        padding: 16px;
         font-size: 1rem;
         top: unset;
         bottom: 2.5%;
         right: 5%;
         left: unset;
         margin-left: unset;
+        padding: 16px;
         z-index: 200;
         opacity: 1;
         transition: visibility 150ms ease-in-out, opacity 100ms ease-in-out, bottom 100ms ease-in-out;
@@ -517,7 +517,6 @@ MOBILE VIEWPORTS
         font-size: 0.83rem;
         float: unset;
         column-gap: 25px;
-        display: flex;
         flex-wrap: wrap;
     }
     #main #cs-col-1 {
@@ -659,7 +658,7 @@ MOBILE VIEWPORTS
         #skills-list-container {
             left: 44px;
             bottom: 0;
-            width: 95%;
+            width: 85%;
         }
         #skills-list-container .decorator {
             display: block;
