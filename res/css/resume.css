@@ -78,7 +78,8 @@ body, body * {
 #main {
     float: left;
     font-size: 1rem;
-    padding: 0.1in 0.25in 0.1in 0.45in;
+    /* margin-right: 100px; */
+    padding: 0.1in 0.6in 0.1in 0.4in;
     width: 100%;
 }
 
@@ -103,17 +104,17 @@ a:hover {
 }
 
 #secondary-title {
-    display: inline;
-    padding-bottom: 10px;
+    display: block;
+    margin-top: 10px;
 }
 
 .download-button {
     background-color: var(--color-accent-light);
     border-radius: 15px;
     box-shadow: 0 1px 5px #3b3b3b2a;
-    display: initial;
-    top: -4px;
-    left: 42%;
+    bottom: 5px;
+    float: right;
+    width: fit-content;
     padding: 4px 13px;
     position: relative;
     transition: background-color 250ms ease-in-out 0s, box-shadow 150ms ease-in-out 0s;
@@ -147,12 +148,13 @@ a:hover {
     columns: 2;
     line-height: 1.75rem;
     position: relative;
-    left: 7%;
-    top: -25px;
+    /* left: 7%; */
+    top: 12px;
+    float: right;
 }
 
 #main #cs-col-1 {
-    margin-right: 25px;
+    margin-right: 15px;
 }
 
 #interpunct {
@@ -162,16 +164,17 @@ a:hover {
 }
 
 #title {
-    left: 0.6in;
+    padding-left: 8%;
+    /* left: 0.6in; */
     line-height: 1.2;
     margin-bottom: 0.2in;
     position: relative;
-    width: 100%;
+    /* width: 95%; */
 }
 
 #title h1 {
     display: inline;
-    font-size: 3.6rem;
+    font-size: 3.5rem;
     font-weight: 300;
     line-height: 1.5;
     text-transform: uppercase;
@@ -318,8 +321,8 @@ a:hover {
 .date {
     flex: 0 0 var(--date-block-width);
     font-size: 0.95rem;
-    margin: 0 25px 0 -25px;
-    padding-top: calc(var(--row-blocks-padding-top) + 4px) !important;
+    margin: 0 15px 0 -15px;
+    padding-top: calc(var(--row-blocks-padding-top) + 2px) !important;
     text-align: right;
 }
 
@@ -451,16 +454,19 @@ MOBILE VIEWPORTS
         margin-bottom: 5%;
     }
     #title {
+        padding-left: unset;
         left: 7vw;
         margin-bottom: unset;
         margin-top: 6px;
-        width: 89%;
+        margin-right: 56px;
+        width: fit-content;
     }
     #title h1 {
         display: block;
         line-height: 1.25em;
         font-size: 2.5rem;
         margin-bottom: 15px;
+        /* margin-right: 14px; */
     }
     .subheading {
         display: inline-block;
@@ -517,9 +523,13 @@ MOBILE VIEWPORTS
         column-gap: 25px;
         display: flex;
         flex-wrap: wrap;
+        /* margin-right: 17px; */
     }
     #main #cs-col-1 {
         margin-right: 5vw;
+    }
+    #secondary-title {
+        margin-top: 20px;
     }
     #main h2 {
         width: fit-content;
