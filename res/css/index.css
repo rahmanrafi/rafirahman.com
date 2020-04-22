@@ -140,6 +140,7 @@ a.text-link:hover {
 }
 
 .social-links {
+  display: flex;
   padding-top: 2vmin;
 }
 
@@ -165,9 +166,6 @@ a.text-link:hover {
 /* Narrow (i.e. mobile) viewports */
 
 @media screen AND (max-width: 1000px) {
-  body {
-    position: fixed;
-  }
   .big-text {
     display: none;
   }
@@ -210,7 +208,6 @@ a.text-link:hover {
     font-size: calc(16px + calc(4vmin - 10px));
   }
   .social-links {
-    display: flex;
     padding-top: 3vmin;
   }
   .social-links>a:not(:last-child) {
@@ -218,6 +215,16 @@ a.text-link:hover {
   }
   .social-links>a:last-child {
     margin-right: 20px;
+  }
+  @media screen AND (max-width: 218px){
+    body {
+      position: relative;
+      width: 0%;
+    }
+    .hero {
+      top: 10vh;
+      bottom: unset;
+    }
   }
 }
 
