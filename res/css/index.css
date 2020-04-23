@@ -26,24 +26,7 @@ body #buorgig {
   top: 90vh;
   transform: translateY(-100%);
   z-index: 1;
-  animation: fadein 350ms;
-  animation-timing-function: cubic-bezier(0, 0, 0.13, 0.97);
   margin-right: 25px;
-}
-
-.loading {
-  animation-play-state: paused;
-}
-
-@keyframes fadein {
-  from {
-    top: 87vh;
-    opacity: 0;
-  }
-  to {
-    top: 90vh;
-    opacity: 1;
-  }
 }
 
 .transition-layer {
@@ -154,6 +137,7 @@ a.text-link:hover {
 }
 
 /* Narrow (i.e. mobile) viewports */
+
 @media screen AND (max-width: 1000px) {
   .big-text {
     display: none;
@@ -166,16 +150,6 @@ a.text-link:hover {
     left: -1%;
     display: block;
     margin-left: 1px;
-  }
-  @keyframes fadein {
-    from {
-      bottom: 0%;
-      opacity: 0;
-    }
-    to {
-      bottom: 3%;
-      opacity: 1;
-    }
   }
   .profile {
     position: relative;
@@ -224,16 +198,6 @@ a.text-link:hover {
       top: 10vh;
       bottom: unset;
     }
-    @keyframes fadein {
-      from {
-        top: 0vh;
-        opacity: 0;
-      }
-      to {
-        top: 10vh;
-        opacity: 1;
-      }
-    }
   }
 }
 
@@ -242,15 +206,5 @@ a.text-link:hover {
     position: relative;
     transform: none;
     top: 5%;
-  }
-  @keyframes fadein {
-    from {
-      top: -10%;
-      opacity: 0;
-    }
-    to {
-      top: 5%;
-      opacity: 1;
-    }
   }
 }
