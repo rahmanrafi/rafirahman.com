@@ -1,7 +1,15 @@
 document.getElementById("main").classList.add('loading');
-window.onload = function () {
-    document.getElementById("main").classList.remove('loading');
-};
+var observer = new MutationObserver(function (mutations, me) {
+    if (document.querySelector('.vanta-canvas')) {
+        document.getElementById("main").classList.remove('loading');
+        me.disconnect();
+        return;
+    }
+});
+observer.observe(document, {
+    childList: true,
+    subtree: true
+});
 // Typewriter effect
 const big_typer = new TypeIt('#typer-big', {
     strings: [
