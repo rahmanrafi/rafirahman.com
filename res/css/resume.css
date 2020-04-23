@@ -64,21 +64,35 @@ body, body * {
     max-height: 10000000px;
 }
 
-.animsition-overlay {
+.resume-content {
     width: 8.5in;
     margin: auto;
 }
 
-.animsition-overlay-slide {
+/* .animsition-overlay-slide {
     background-color: rgb(137, 163, 190);
     z-index: 2
-}
+} */
 
 #main {
     float: left;
     font-size: 1rem;
     padding: 0.1in 0.6in 0.1in 0.4in;
     width: 100%;
+    position: relative;
+    animation: fadein 500ms;
+    animation-timing-function: cubic-bezier(0, 0, 0.13, 0.97);
+}
+
+@keyframes fadein {
+    0% {
+        bottom: 50px;
+        opacity: 0;
+    }
+    100% {
+        bottom: 0px;
+        opacity: 1;
+    }
 }
 
 h1, h2, h3 {
@@ -471,7 +485,7 @@ MOBILE VIEWPORTS
         font-size: 0.9rem;
         margin-right: 30px;
     }
-    .animsition-overlay {
+    .resume-content {
         width: 100%;
         margin: unset;
     }
@@ -699,28 +713,32 @@ FOR PRINTING TO PDF
         margin: 0;
     }
     :root {
-        font-size: 9.5pt;
+        font-size: 9pt;
         --decorator-border: 1px solid #ccc;
     }
     #main {
-        margin: 0.1in 0.1in 0.1in 0.25in;
-        padding: unset;
+        margin: 0in 0in 0in 0.33in;
+        padding: 0in 0.33in 0in 0in;
         width: 8.5in;
     }
     #dl-link {
         display: none;
     }
     #title>h1 {
-        font-size: 2.6rem;
+        font-size: 3rem;
+    }
+    #secondary-title {
+        margin-top: 0px;
     }
     #main .contact {
         float: right;
-        font-size: 10pt;
-        line-height: 31px;
-        margin-top: 7px;
-        margin-bottom: 0px;
-        margin-right: -7px;
-        column-gap: 44px;
+        font-size: 1rem;
+        line-height: 32px;
+        top: 5px;
+        left: unset;
+    }
+    #main #cs-col-1 {
+        margin-right: 30px;
     }
     .main-block {
         margin-top: unset;

@@ -85,23 +85,15 @@ if (window.innerWidth <= 1000) {
 }
 
 // Transition effect
-$(document).ready(function () {
-    if ($('.bottom-layer').hasClass('active')) {
-        var layers = document.querySelectorAll(".bottom-layer");
-        for (const layer of layers) {
-            layer.classList.toggle();
-        }
-    }
-})
 const resume_button = document.getElementById("resume-button")
 resume_button.onclick = function (e) {
     e.preventDefault();
     var href = $(this).attr('href');
-    var layers = document.querySelectorAll(".bottom-layer");
+    var layers = document.querySelectorAll(".transition-layer");
     for (const layer of layers) {
-        layer.classList.toggle("active");
+        layer.classList.add("active");
     }
-    $('.bottom-layer--3').on('transitionend webkitTransitionEnd', function () {
+    $('#layer-last').on('transitionend webkitTransitionEnd', function () {
         window.location = href;
     })
 }

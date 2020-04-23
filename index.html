@@ -10,7 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords"
         content="Rafi, Rahman, programmer, coder, software, developer, Toronto, Ontario, Canada, University, North, America, new, grad">
-
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136152918-1"></script>
     <script>
@@ -23,16 +22,27 @@
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Effects resources -->
-    <script src="res/js/animsition.min.js"></script>
     <script src="res/js/three.min.js"></script>
     <script src="res/js/vanta.net.min.js"></script>
     <script src="res/js/typeit.min.js"></script>
     <!-- Styling resources-->
-    <link rel="stylesheet" href="res/css/animsition.min.css">
     <link rel="stylesheet" type="text/css" href="res/css/index.css">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <noscript>
+        <style>
+            .big-text {
+                display: block;
+            }
+            .tagline {
+                display: none;
+            }
+            #noscript-fallback {
+                display: block;
+            }
+        </style>
+    </noscript>
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="res/favicons/apple-touch-icon.png?v=2">
     <link rel="icon" type="image/png" sizes="32x32" href="res/favicons/favicon-32x32.png?v=2">
@@ -40,15 +50,14 @@
     <link rel="manifest" href="res/favicons/site.webmanifest?v=2">
     <link rel="mask-icon" href="res/favicons/safari-pinned-tab.svg?v=2" color="#5bbad5">
     <link rel="shortcut icon" href="res/favicons/favicon.ico?v=2">
+    <link rel="prefetch" href="resume.html" as="document" crossorigin="use-credentials">
     <meta name="msapplication-TileColor" content="#603cba">
     <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
-    <div class="bottom-layer"></div>
-    <div class="bottom-layer bottom-layer--2"></div>
-    <div class="bottom-layer bottom-layer--3"></div>
-    <div class="animsition-overlay-no hero" data-animsition-overlay="true">
+    <div class="transition-layer" id="layer-last"></div>
+    <div class="hero" id="main">
         <picture>
             <source srcset="res/images/profile.webp" type="image/webp">
             <source srcset="res/images/profile.jpg" type="image/jpeg">
@@ -64,7 +73,8 @@
                             Rahman</a>.</span>
                 </strong>
             </div>
-            <h3> Here's my <a href="./resume" class="text-link animsition-link" id="resume-button">resume</a>.
+            <div class="tagline" id="noscript-fallback">I'm a software developer based in Toronto.</div>
+            <h3> Here's my <a href="./resume.html" class="text-link animsition-link" id="resume-button">resume</a>.
             </h3>
             <h4> Say hi, and let's create together<a href="res/images/topsecret.jpg" style="color: white">.</a></h4>
             <div class="social-links">

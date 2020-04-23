@@ -14,31 +14,6 @@ window.onscroll = function () {
   prevYOffset = window.pageYOffset;
 };
 
-// Transition animation
-$(document).ready(function () {
-  $(".animsition-overlay").animsition({
-    inClass: 'overlay-slide-in-top',
-    outClass: 'overlay-slide-out-bottom',
-    inDuration: 250,
-    outDuration: 400,
-    linkElement: '.animsition-link',
-    loading: false,
-    loadingParentElement: 'body',
-    loadingClass: 'animsition-loading',
-    loadingInner: '',
-    timeout: false,
-    timeoutCountdown: 5000,
-    onLoadEvent: true,
-    browser: ['animation-duration', '-webkit-animation-duration'],
-    overlay: true,
-    overlayClass: 'animsition-overlay-slide',
-    overlayParentElement: 'body',
-    transition: function (url) {
-      window.location.href = url;
-    }
-  });
-});
-
 // Browser update notifier
 var $buoop = {
   required: {
