@@ -69,11 +69,6 @@ body, body * {
     margin: auto;
 }
 
-/* .animsition-overlay-slide {
-    background-color: rgb(137, 163, 190);
-    z-index: 2
-} */
-
 #main {
     float: left;
     font-size: 1rem;
@@ -83,6 +78,10 @@ body, body * {
     animation: fadein 500ms;
     animation-timing-function: cubic-bezier(0, 0, 0.13, 0.97);
 }
+
+.loading {
+    animation-play-state: paused;
+  }
 
 @keyframes fadein {
     0% {

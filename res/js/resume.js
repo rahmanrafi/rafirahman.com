@@ -1,3 +1,7 @@
+document.getElementById("main").classList.add('loading');
+window.addEventListener("load", function () {
+  document.getElementById("main").classList.remove('loading');
+});
 // Mobile download button animation
 var prevYOffset = window.pageYOffset;
 window.onscroll = function () {
@@ -13,7 +17,6 @@ window.onscroll = function () {
   }
   prevYOffset = window.pageYOffset;
 };
-
 // Browser update notifier
 var $buoop = {
   required: {
@@ -29,7 +32,6 @@ var $buoop = {
   test: false,
   text: "<b>Your browser ({brow_name}) is outdated and may break this page.</b> <a{up_but}>Update</a> <a href=\"resume.pdf\" id=\"emergency-button\">View PDF</a> <a{ignore_but}>Ignore</a>"
 };
-
 function $buo_f() {
   var e = document.createElement("script");
   e.src = "//browser-update.org/update.min.js";

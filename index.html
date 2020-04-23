@@ -11,7 +11,7 @@
     <meta name="keywords"
         content="Rafi, Rahman, programmer, coder, software, developer, Toronto, Ontario, Canada, University, North, America, new, grad">
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136152918-1"></script>
+    <script async defer src="https://www.googletagmanager.com/gtag/js?id=UA-136152918-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() {
@@ -21,25 +21,26 @@
         gtag('config', 'UA-136152918-1');
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Preload/prefetch resources-->
+    <link rel="preload" as="script" href="res/js/resume.js">
+    <link rel="prefetch" as="document" href="./resume.html">
+    <!-- Styling resources-->
+    <link rel="stylesheet" href="res/css/index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:400,700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
     <!-- Effects resources -->
     <script src="res/js/three.min.js"></script>
     <script src="res/js/vanta.net.min.js"></script>
     <script src="res/js/typeit.min.js"></script>
-    <!-- Styling resources-->
-    <link rel="stylesheet" type="text/css" href="res/css/index.css">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <noscript>
         <style>
+            #noscript-fallback,
             .big-text {
                 display: block;
             }
+
             .tagline {
                 display: none;
-            }
-            #noscript-fallback {
-                display: block;
             }
         </style>
     </noscript>
@@ -50,7 +51,6 @@
     <link rel="manifest" href="res/favicons/site.webmanifest?v=2">
     <link rel="mask-icon" href="res/favicons/safari-pinned-tab.svg?v=2" color="#5bbad5">
     <link rel="shortcut icon" href="res/favicons/favicon.ico?v=2">
-    <link rel="prefetch" href="resume.html" as="document" crossorigin="use-credentials">
     <meta name="msapplication-TileColor" content="#603cba">
     <meta name="theme-color" content="#ffffff">
 </head>

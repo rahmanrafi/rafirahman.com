@@ -1,3 +1,7 @@
+document.body.classList.add('loading');
+window.addEventListener("load", function () {
+  document.body.classList.remove('loading');
+});
 // Typewriter effect
 const big_typer = new TypeIt('#typer-big', {
     strings: [
@@ -83,7 +87,6 @@ if (window.innerWidth <= 1000) {
         spacing: 16
     })
 }
-
 // Transition effect
 const resume_button = document.getElementById("resume-button")
 resume_button.onclick = function (e) {
@@ -97,7 +100,6 @@ resume_button.onclick = function (e) {
         window.location = href;
     })
 }
-
 // Browser update notification
 var $buoop = {
     required: {
@@ -113,7 +115,6 @@ var $buoop = {
     test: false,
     text: "<b>Your browser ({brow_name}) is out of date.</b>  <a{up_but}>Update</a> <a{ignore_but}>Ignore</a>"
 };
-
 function $buo_f() {
     var e = document.createElement("script");
     e.src = "//browser-update.org/update.min.js";
