@@ -1,4 +1,7 @@
-document.body.classList.add('loading');
+document.getElementById("main").classList.add('loading');
+window.onload = function () {
+    document.getElementById("main").classList.remove('loading');
+};
 // Typewriter effect
 const big_typer = new TypeIt('#typer-big', {
     strings: [
@@ -122,5 +125,3 @@ try {
 } catch (e) {
     window.attachEvent("onload", $buo_f)
 }
-
-document.body.classList.remove('loading');
