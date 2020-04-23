@@ -64,7 +64,7 @@ window.onresize = function () {
     }
 }
 // Vanta.js effects
-document.body.classList.add('loading');
+// document.body.classList.add('loading');
 if (window.innerWidth <= 1000) {
     VANTA.NET({
         el: "body",
@@ -83,7 +83,7 @@ if (window.innerWidth <= 1000) {
         maxDistance: 12,
         spacing: 16
     })
-    document.body.classList.remove('loading');
+    // document.body.classList.remove('loading');
 }
 // Transition effect
 const resume_button = document.getElementById("resume-button")
