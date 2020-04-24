@@ -32,9 +32,12 @@
     <script src="res/js/typeit.min.js"></script>
     <script src="res/js/three.min.js"></script>
     <script src="res/js/vanta.net.min.js"></script>
-
     <noscript>
         <style>
+            .loading {
+                animation-play-state: unset;
+            }
+
             #noscript-fallback,
             .big-text {
                 display: block;
@@ -58,7 +61,7 @@
 
 <body>
     <div class="transition-layer" id="layer-last"></div>
-    <div class="hero" id="main">
+    <div class="hero loading" id="main">
         <picture>
             <source srcset="res/images/profile.webp" type="image/webp">
             <source srcset="res/images/profile.jpg" type="image/jpeg">
