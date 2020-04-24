@@ -70,10 +70,9 @@ body, body * {
 }
 
 #main {
-    float: left;
+    /* float: left; */
     font-size: 1rem;
     padding: 0.1in 0.6in 0.1in 0.4in;
-    width: 100%;
     position: relative;
     animation: fadein 500ms;
     animation-timing-function: cubic-bezier(0, 0, 0.13, 0.97);
@@ -81,7 +80,7 @@ body, body * {
 
 .loading {
     animation-play-state: paused;
-  }
+}
 
 @keyframes fadein {
     0% {
@@ -112,6 +111,14 @@ a {
 
 a:hover {
     box-shadow: var(--color-accent-light) 0 -1.2em 0 inset;
+}
+
+h3>a:after {
+    font-family: "Font Awesome 5 Free";
+    font-size: 0.79rem;
+    color: rgb(150, 150, 150);
+    content: "\f35d";
+    margin-left: 0.37rem;
 }
 
 #secondary-title {
@@ -159,7 +166,6 @@ a:hover {
     columns: 2;
     line-height: 1.75rem;
     position: relative;
-    /* left: 7%; */
     top: 12px;
     float: right;
 }
@@ -489,7 +495,7 @@ MOBILE VIEWPORTS
         margin: unset;
     }
     #main {
-        padding: 0.1in 0.25in 0 0.33in;
+        padding: 0.1in 0.33in 0 0.33in;
     }
     #dl-big {
         display: none;
@@ -555,6 +561,12 @@ MOBILE VIEWPORTS
         left: -2px;
         margin-right: -2px;
         top: unset;
+        position: relative;
+    }
+    h3>a:after {
+        font-size: 0.7rem;
+        margin-left: 0.4rem;
+        bottom: 1px;
         position: relative;
     }
     .main-block {
@@ -665,6 +677,9 @@ MOBILE VIEWPORTS
         background: linear-gradient(to left, white 60%, rgba(255, 255, 255, 0) 100%);
     }
     @media screen AND (max-width: 400px) {
+        #main {
+            float: left;
+        }
         #skills-block {
             display: inline-block;
         }
@@ -680,7 +695,7 @@ MOBILE VIEWPORTS
         #skills-list-container .decorator::before, #skills-list-container .decorator::after {
             display: none;
         }
-        #skills-list-container::before, ::after {
+        #skills-list-container::before, #skills-list-container::after {
             display: none;
         }
         #skills-list {
@@ -744,6 +759,9 @@ FOR PRINTING TO PDF
     }
     a {
         box-shadow: none;
+    }
+    h3>a:after {
+        display: none;
     }
     .decorator::after {
         color-adjust: exact !important;
