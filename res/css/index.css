@@ -44,7 +44,7 @@ body #buorgig {
     top: 90vh;
     opacity: 1;
   }
-} 
+}
 
 .transition-layer {
   display: block;
@@ -154,6 +154,7 @@ a.text-link:hover {
 }
 
 /* Narrow (i.e. mobile) viewports */
+
 @media screen AND (max-width: 1000px) {
   .big-text {
     display: none;
@@ -177,7 +178,7 @@ a.text-link:hover {
       opacity: 1;
     }
   }
-    .profile {
+  .profile {
     position: relative;
     padding: 0px;
     border-radius: 50%;
