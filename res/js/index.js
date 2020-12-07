@@ -25,12 +25,10 @@ const big_typer = new TypeIt('#typer-big', {
     breakLines: false,
     waitUntilVisible: true,
     loop: true,
-    nextStringDelay: 1500,
-    loopDelay: [
-        100, 2500
-    ],
+    nextStringDelay: [2500, 500],
+    loopDelay: [100, 2500],
     startDelete: true,
-    startDelay: 500
+    startDelay: 2000
 });
 const small_typer = new TypeIt('#typer-small', {
     strings: [
@@ -48,7 +46,7 @@ const small_typer = new TypeIt('#typer-small', {
     breakLines: false,
     waitUntilVisible: true,
     loop: true,
-    nextStringDelay: 2500,
+    nextStringDelay: [2500, 500],
     loopDelay: [
         100, 2500
     ],

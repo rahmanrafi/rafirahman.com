@@ -153,6 +153,11 @@ a.text-link:hover {
   margin-right: 20px;
 }
 
+#hi-link {
+  padding-left: 2px;
+  padding-right:4.5px;
+}
+
 /* Narrow (i.e. mobile) viewports */
 
 @media screen AND (max-width: 1000px) {
