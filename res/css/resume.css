@@ -731,15 +731,18 @@ FOR PRINTING TO PDF
         --decorator-border: 1px solid #ccc;
     }
     #main {
-        margin: 0in 0in 0in 0.33in;
+        margin: 0in 0in 0in 0in;
         padding: 0in 0.33in 0in 0in;
-        width: 8.5in;
+        width: 110%;
     }
     #dl-link {
         display: none;
     }
+    #title{
+        padding-left: 7%;
+    }
     #title>h1 {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
     #secondary-title {
         margin-top: 0px;
@@ -769,6 +772,13 @@ FOR PRINTING TO PDF
         left: calc(var(--decorator-outer-offset-left) + 5.5px);
     }
     #skills-block {
+        margin-top: 10px;
         margin-bottom: 0px;
+    }
+    #main h2>.fa-briefcase, #main h2>.fa-window-maximize {
+        left: -26.5px;
+    }
+    #main h2>.fa-graduation-cap{
+        left: -29px;
     }
 }
