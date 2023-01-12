@@ -1,0 +1,14 @@
+:root {
+    --drop-shadow: 1px 2px 6px #00000034;
+}
+
+body {
+    font-family: 'DM Sans', Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    width: 8.5in;
+    margin: auto;
+}
+
+ul.collection {
+    list-style: none;
+}
