@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { fas } from '@fortawesome/free-brands-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faGlobe } from '@fortawesome/free-solid-svg-icons'
+import { ExternalLink } from "./common/ExternalLink";
 
 const ContactInfoContainer = styled.div`
   display: inline-flex;
@@ -14,14 +15,18 @@ const ContactInfoContainer = styled.div`
   float: right;
 `
 
-export function ContactInfoComponent({ resumeData }) {
-  if (resumeData?.basics) {
+const ContactInfoItem = styled.li`
+  display: inherit;
+`
+
+export function ContactInfo({ data }) {
+  if (data?.basics) {
     library.add(fab, faGlobe)
-    const basics = resumeData.basics;
+    const basics = data.basics;
     return (
       <ContactInfoContainer>
         <ul id='contact-info' class='collection'>
-            {basics.profiles.map(function (link) {
+            {basics.profiles.map((link, index) => {
                 const iconClass = 'fab'
                 const iconName = link.network.toLowerCase()
                 var iconConfig = [iconClass, iconName]
@@ -29,10 +34,10 @@ export function ContactInfoComponent({ resumeData }) {
                     iconConfig = 'globe'
                 }  
                 return (
-                    <li class='info-link'>
+                    <ContactInfoItem key={`contact-info-${index}`}>
                         <FontAwesomeIcon icon={iconConfig}/>
-                        <a href={link.url}>{link.username}</a>
-                    </li>
+                        <ExternalLink url={link.url}>{link.username}</ExternalLink>
+                    </ContactInfoItem>
                 )
             })}
         </ul>
