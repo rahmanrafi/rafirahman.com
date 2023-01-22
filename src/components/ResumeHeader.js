@@ -6,11 +6,50 @@ import { library, icon } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faGlobe } from '@fortawesome/free-solid-svg-icons'
-import { ExternalLink } from "./common/ExternalLink";
+import { PrettyLink } from "./common/PrettyLink";
 
 const Container = styled.header`
-  display: inline;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `
+
+const ContactLinksContainer = styled.div`
+  display: inline-block;
+  position: relative;
+  columns: 2;
+  column-gap: 2em;
+`
+
+const SubheadingContainer = styled.h2`
+  display: block;
+  font-weight: 100; 
+  font-size: 1.25rem;
+`
+
+const FullNameContainer = styled.h1`
+  width: auto;
+  text-transform: uppercase;
+  font-weight: 200;
+  font-size: 3.5em;
+  margin-bottom: 0;
+  text-shadow: var(--drop-shadow);
+`
+
+const ContactLinkItem = styled.div`
+  display: flex;
+`
+
+const contactInfoLinkStyle = {
+  // color: 'var(--primary-color)',
+  // marginTop: '5%'
+}
+
+const contactInfoIconStyle = {
+  color: 'var(--primary-color)',
+  marginTop: '5px'
+}
+
 export function ResumeHeader({ data }) {
   if (data?.basics) {
     const basics = data.basics;
@@ -18,30 +57,24 @@ export function ResumeHeader({ data }) {
     const subheadings = [basics.label, basics.locationAsString]
     return (
       <Container>
-        <FullName firstName={firstName} lastName={lastName}></FullName>
-        <ContactInfo data={data}></ContactInfo>
-        <Subheading subheading={subheadings}> </Subheading>
+        <FullName firstName={firstName} lastName={lastName} />
+        <ContactLinks data={data} />
+        {/* <Subheading subheading={subheadings} /> */}
       </Container>
     );
   } else {
     return (
       <div>
-        <FullName></FullName>
-        <ContactInfo></ContactInfo>
-        <Subheading></Subheading>
+        <FullName />
+        <ContactLinks />
+        <Subheading />
       </div>
     );
   }
 }
 
-const ContactInfoContainer = styled.div`
-  display: inline-flex;
-  position: relative;
-  columns: 2;
-  float: right;
-`
-function ContactInfo({ data }) {
-  if (!data?.basics) { 
+function ContactLinks({ data }) {
+  if (!data?.basics) {
     return (
       <Skeleton width={'25%'} height={'40px'} />
     )
@@ -49,8 +82,7 @@ function ContactInfo({ data }) {
   library.add(fab, faGlobe)
   const basics = data.basics;
   return (
-    <ContactInfoContainer>
-      <ul id='contact-info' className='collection'>
+    <ContactLinksContainer className='collection'>
         {basics.profiles.map(function (link) {
           const iconClass = 'fab'
           const iconName = link.network.toLowerCase()
@@ -59,24 +91,16 @@ function ContactInfo({ data }) {
             iconConfig = 'globe'
           }
           return (
-            <li className='info-link'>
-              <FontAwesomeIcon icon={iconConfig} />
-              <ExternalLink url={link.url} text={link.username}></ExternalLink>
-              {/* <a href={link.url}>{link.username}</a> */}
-            </li>
+            <ContactLinkItem>
+              <FontAwesomeIcon icon={iconConfig} style={contactInfoIconStyle} />
+              <PrettyLink url={link.url} text={link.username} />
+            </ContactLinkItem>
           )
         })}
-      </ul>
-    </ContactInfoContainer>
+    </ContactLinksContainer>
   );
 }
 
-
-const SubheadingContainer = styled.h2`
-  display: block;
-  font-weight: 100;
-  font-size: 1.25rem;
-`
 function Subheading({ subheading }) {
   if (!subheading) {
     return (
@@ -89,15 +113,6 @@ function Subheading({ subheading }) {
 
 }
 
-const FullNameContainer = styled.h1`
-  display: inline;
-  width: auto;
-  text-transform: uppercase;
-  font-weight: 200;
-  font-size: 4em;
-  margin-bottom: 1rem;
-  text-shadow: var(--drop-shadow);
-`
 function FullName({ firstName, lastName }) {
   if (!(firstName && lastName)) {
     return (
@@ -105,7 +120,7 @@ function FullName({ firstName, lastName }) {
     )
   }
   return (
-    <FullNameContainer>{firstName} <span style={{fontWeight: 'bold'}}>{lastName}</span></FullNameContainer>
+    <FullNameContainer>{firstName} <span style={{ fontWeight: 'bold' }}>{lastName}</span></FullNameContainer>
   )
 }
 

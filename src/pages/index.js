@@ -7,12 +7,8 @@ import 'react-bootstrap'
 import { getResume } from "../../api/resume"
 import { ResumeHeader } from "../components/ResumeHeader"
 import { SkillList } from "../components/SkillList"
+import { TimelineSection } from "../components/common/TimelineSection"
 import "../styles/resume.css"
-
-const pageStyles = {
-  color: "#232129",
-  paddingLeft: 48,
-}
 
 const IndexPageComponent = () => {
   const [resumeData, setData] = React.useState('')
@@ -24,8 +20,10 @@ const IndexPageComponent = () => {
     fetchData()
   }, [])
   return (
-    <main style={pageStyles}>
+    <main>
       <ResumeHeader data={resumeData}></ResumeHeader>
+      <TimelineSection sectionName='Experience' data={resumeData?.work}></TimelineSection>
+      <TimelineSection sectionName='Education' data={resumeData?.education}></TimelineSection>
       <SkillList skills={resumeData?.skills}></SkillList>
     </main>
   )

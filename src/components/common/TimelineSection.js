@@ -6,12 +6,40 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { fas } from '@fortawesome/free-brands-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faGlobe } from '@fortawesome/free-solid-svg-icons'
-import { LocationTag } from "./LocationTag";
+// import { LocationTag } from "./LocationTag";
 import { SectionHeader } from "./SectionHeader";
+import Skeleton from 'react-loading-skeleton'
 
 
-export function TimelineSection({ sectionName }) {
+const TimelineContainer = styled.div`
+`
+
+const SectionContainer = styled.div`
+`
+
+export function TimelineSection({ sectionName, data }) {
+  if (!data) {
+    return (
+      <Skeleton width={'50%'} inline={true} />
+    )
+  }
   return (
-    <SectionHeader></SectionHeader>
+    <TimelineContainer>
+      <SectionHeader title={sectionName}></SectionHeader>
+      <SectionContainer>
+        { data.map((el) => 
+          <TimelineEntry data={el}></TimelineEntry>
+        )}
+      </SectionContainer>
+    </TimelineContainer>
+  )
+}
+
+function TimelineEntry({ data }) {
+  return(
+    <div>
+      {JSON.stringify(data)}
+      <br></br>
+    </div>
   )
 }

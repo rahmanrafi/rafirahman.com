@@ -1,6 +1,7 @@
 import * as React from "react";
 // import styled from 'styled-components'
 import 'react-loading-skeleton/dist/skeleton.css'
+import styled from 'styled-components'
 import Stack from 'react-bootstrap/Stack'
 // import Container from 'react-bootstrap/Container'
 // import Row from 'react-bootstrap/Row'
@@ -12,6 +13,11 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 const headerStyle = {
     color: 'var(--secondary-color)'
 }
+
+const SectionHeaderContainer = styled.h3 `
+    font-size: 1.5em;
+    color: var(--secondary-color);
+`
 
 const headerIconStyle = {
     fontSize: '0.9em',
@@ -36,9 +42,9 @@ export function SectionHeader({ title, icon }) {
 
     return (
         <Stack direction='horizontal'>
-            <h3 style={headerStyle}>
+            <SectionHeaderContainer>
                 <span><FontAwesomeIcon style={headerIconStyle} icon={icon}/></span> {title}
-            </h3>
+            </SectionHeaderContainer>
         </Stack>
     )
 }
