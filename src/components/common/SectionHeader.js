@@ -14,11 +14,6 @@ const headerStyle = {
     color: 'var(--secondary-color)'
 }
 
-const SectionHeaderContainer = styled.h3 `
-    font-size: 1.5em;
-    color: var(--secondary-color);
-`
-
 const headerIconStyle = {
     fontSize: '0.9em',
     marginRight: '10px'
@@ -42,9 +37,9 @@ export function SectionHeader({ title, icon }) {
 
     return (
         <Stack direction='horizontal'>
-            <SectionHeaderContainer>
+            <h3 className='section-header'>
                 <span><FontAwesomeIcon style={headerIconStyle} icon={icon}/></span> {title}
-            </SectionHeaderContainer>
+            </h3>
         </Stack>
     )
 }
