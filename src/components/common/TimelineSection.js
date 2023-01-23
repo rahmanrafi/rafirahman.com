@@ -1,7 +1,7 @@
 import * as React from "react";
 import ReactDOM from 'react-dom'
 import styled from 'styled-components'
-import { library, icon, IconName} from '@fortawesome/fontawesome-svg-core'
+import { library, icon, IconName } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { fas } from '@fortawesome/free-brands-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
@@ -27,37 +27,28 @@ export function TimelineSection({ sectionName, data }) {
       <Skeleton width={'50%'} inline={true} />
     )
   }
+  let iterableEntries = data
   if (sectionName.toLowerCase() == 'experience') {
-    let workExperience = chronologizeEmployment(data)
-    return (
-      <TimelineContainer>
-        <SectionHeader title={sectionName}></SectionHeader>
-        <SectionContainer>
-          { workExperience.map((el) => 
-            <EmploymentEntry data={el} />
-          )}
-        </SectionContainer>
-      </TimelineContainer>
-    )
+    iterableEntries = chronologizeEmployment(data)
   }
   return (
     <TimelineContainer>
       <SectionHeader title={sectionName}></SectionHeader>
       <SectionContainer>
-        { data.map((el) => 
-          <TimelineEntry data={el}></TimelineEntry>
+        {iterableEntries.map((el) =>
+          <TimelineEntry sectionName={sectionName} data={el}></TimelineEntry>
         )}
       </SectionContainer>
     </TimelineContainer>
   )
 }
 
-function EmploymentEntry({ data }) {
-  return(
+function EmployerEntry({ data }) {
+  return (
     <div>
       <a className='section-header' href={data.website}>{data.company}</a>
       <div>
-        { data.roles.map((role) => 
+        {data.roles.map((role) =>
           <EmploymentRole role={role} />
         )}
       </div>
@@ -65,8 +56,8 @@ function EmploymentEntry({ data }) {
   )
 }
 
-function EmploymentRole({role}) {
-  return(
+function EmploymentRole({ role }) {
+  return (
     <div>
       <div>{role.position}</div>
       <div>{role.startDate} - {role.endDate}</div>
@@ -79,8 +70,12 @@ function EmploymentRole({role}) {
   )
 }
 
-function TimelineEntry({ data }) {
-  return(
+function TimelineEntry({ sectionName, data }) {
+  if (sectionName.toLowerCase() == 'experience') {
+    return EmployerEntry({ data })
+  }
+  console.log(data)
+  return (
     <div>
       {Object.values(data).toString()}
       <br></br>
