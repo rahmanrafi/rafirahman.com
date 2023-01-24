@@ -35,8 +35,8 @@ export function TimelineSection({ sectionName, data }) {
     <TimelineContainer>
       <SectionHeader title={sectionName}></SectionHeader>
       <SectionContainer>
-        {iterableEntries.map((el) =>
-          <TimelineEntry sectionName={sectionName} data={el}></TimelineEntry>
+        {iterableEntries.map((entry, i) =>
+          <TimelineEntry sectionName={sectionName} data={entry} key={i} />
         )}
       </SectionContainer>
     </TimelineContainer>
@@ -48,8 +48,8 @@ function EmployerEntry({ data }) {
     <div>
       <a className='section-header' href={data.website}>{data.company}</a>
       <div>
-        {data.roles.map((role) =>
-          <EmploymentRole role={role} />
+        {data.roles.map((role, i) =>
+          <EmploymentRole role={role} key={i}/>
         )}
       </div>
     </div>
@@ -62,8 +62,8 @@ function EmploymentRole({ role }) {
       <div>{role.position}</div>
       <div>{role.startDate} - {role.endDate}</div>
       <ul>
-        {role.highlights.map((detail) =>
-          <li>{detail}</li>
+        {role.highlights.map((detail, i) =>
+          <li key={i}>{detail}</li>
         )}
       </ul>
     </div>

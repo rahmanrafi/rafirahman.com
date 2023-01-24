@@ -20,8 +20,8 @@ export function SkillList({ skills }) {
       <SLContainer className='collection'>
         <SectionHeader title='Skills'></SectionHeader>
         <Stack style={{flexWrap: 'wrap'}} direction='horizontal' gap={1}>
-            {skills.map((skill, index) => (
-              <SkillItem skill={skill} key={`skill-${index}`}></SkillItem>
+            {skills.map((skill, i) => (
+              <SkillItem skill={skill} key={i}></SkillItem>
             ))}
         </Stack>
       </SLContainer>

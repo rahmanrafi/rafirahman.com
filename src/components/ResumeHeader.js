@@ -83,7 +83,7 @@ function ContactLinks({ data }) {
   const basics = data.basics;
   return (
     <ContactLinksContainer className='collection'>
-        {basics.profiles.map(function (link) {
+        {basics.profiles.map((link, i) => {
           const iconClass = 'fab'
           const iconName = link.network.toLowerCase()
           var iconConfig = [iconClass, iconName]
@@ -91,7 +91,7 @@ function ContactLinks({ data }) {
             iconConfig = 'globe'
           }
           return (
-            <ContactLinkItem>
+            <ContactLinkItem key={i}>
               <FontAwesomeIcon icon={iconConfig} style={contactInfoIconStyle} />
               <PrettyLink url={link.url} text={link.username} />
             </ContactLinkItem>
