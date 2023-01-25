@@ -40,87 +40,81 @@ const ContactLinkItem = styled.div`
   display: flex;
 `
 
-const contactInfoLinkStyle = {
-  // color: 'var(--primary-color)',
-  // marginTop: '5%'
-}
-
 const contactInfoIconStyle = {
-  color: 'var(--primary-color)',
-  marginTop: '5px'
+    color: 'var(--primary-color)',
+    marginTop: '5px'
 }
 
 export function ResumeHeader({ data }) {
-  if (data?.basics) {
-    const basics = data.basics;
-    const [firstName, lastName] = basics.name.split(' ')
-    const subheadings = [basics.label, basics.locationAsString]
-    return (
-      <Container>
-        <FullName firstName={firstName} lastName={lastName} />
-        <ContactLinks data={data} />
-        {/* <Subheading subheading={subheadings} /> */}
-      </Container>
-    );
-  } else {
-    return (
-      <div>
-        <FullName />
-        <ContactLinks />
-        <Subheading />
-      </div>
-    );
-  }
+    if (data?.basics) {
+        const basics = data.basics;
+        const [firstName, lastName] = basics.name.split(' ')
+        const subheadings = [basics.label, basics.locationAsString]
+        return (
+            <Container>
+                <FullName firstName={firstName} lastName={lastName} />
+                <ContactLinks data={data} />
+            </Container>
+        );
+    } else {
+        return (
+            <div>
+                <FullName />
+                <ContactLinks />
+                <Subheading />
+            </div>
+        );
+    }
 }
 
 function ContactLinks({ data }) {
-  if (!data?.basics) {
+    if (!data?.basics) {
+        return (
+            <Skeleton width={'85%'} height={'40px'} inline={true} />
+        )
+    }
+    library.add(fab, faGlobe)
+    const basics = data.basics;
     return (
-      <Skeleton width={'25%'} height={'40px'} />
-    )
-  }
-  library.add(fab, faGlobe)
-  const basics = data.basics;
-  return (
-    <ContactLinksContainer className='collection'>
-        {basics.profiles.map((link, i) => {
-          const iconClass = 'fab'
-          const iconName = link.network.toLowerCase()
-          var iconConfig = [iconClass, iconName]
-          if (!icon({ prefix: iconClass, iconName: iconName })) {
-            iconConfig = 'globe'
-          }
-          return (
-            <ContactLinkItem key={i}>
-              <FontAwesomeIcon icon={iconConfig} style={contactInfoIconStyle} />
-              <PrettyLink url={link.url} text={link.username} />
-            </ContactLinkItem>
-          )
-        })}
-    </ContactLinksContainer>
-  );
+        <ContactLinksContainer className='collection'>
+            {basics.profiles.map((link, i) => {
+                const iconClass = 'fab'
+                const iconName = link.network.toLowerCase()
+                var iconConfig = [iconClass, iconName]
+                if (!icon({ prefix: iconClass, iconName: iconName })) {
+                    iconConfig = 'globe'
+                }
+                return (
+                    <ContactLinkItem key={i}>
+                        <FontAwesomeIcon icon={iconConfig} style={contactInfoIconStyle} />
+                        <PrettyLink url={link.url} text={link.username} />
+                    </ContactLinkItem>
+                )
+            })}
+        </ContactLinksContainer>
+    );
 }
 
 function Subheading({ subheading }) {
-  if (!subheading) {
+    if (!subheading) {
+        return (
+            <Skeleton wrapper={SubheadingContainer} />
+        )
+    }
     return (
-      <SubheadingContainer><Skeleton width={'25%'} /></SubheadingContainer>
+        <SubheadingContainer>{subheading[0]} ● {subheading[1]}</SubheadingContainer>
     )
-  }
-  return (
-    <SubheadingContainer>{subheading[0]} ● {subheading[1]}</SubheadingContainer>
-  )
 
 }
 
 function FullName({ firstName, lastName }) {
-  if (!(firstName && lastName)) {
+    if (!(firstName && lastName)) {
+        return (
+            <Skeleton wrapper={FullNameContainer} />
+        )
+    }
     return (
-      <FullNameContainer><Skeleton width={'30%'} /></FullNameContainer>
+        <FullNameContainer>{firstName} <span style={{ fontWeight: 'bold' }}>{lastName}</span></FullNameContainer>
     )
-  }
-  return (
-    <FullNameContainer>{firstName} <span style={{ fontWeight: 'bold' }}>{lastName}</span></FullNameContainer>
-  )
 }
 
