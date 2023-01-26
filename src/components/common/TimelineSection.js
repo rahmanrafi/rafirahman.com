@@ -50,7 +50,7 @@ export const EntryBulletContainer = styled.div`
         margin-top: ${bulletMarginTop};
         left: calc(0em - (${bulletWidth} / 2 - (${lineWidth} / 2)));
     }
-    .sub:before {
+    &.sub:before {
         content: ' ';
         background: white;
         position: absolute;
@@ -97,7 +97,7 @@ export function EntriesList({ ready, children }) {
         <EntriesListContainer>
             {React.Children.map(children, child => (
                 <EntryItem>
-                    <EntryBullet data={child} />
+                    {child}
                 </EntryItem>
             ))}
         </EntriesListContainer>

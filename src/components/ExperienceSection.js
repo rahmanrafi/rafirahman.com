@@ -45,7 +45,10 @@ function EmploymentRole({ role, index }) {
                 <div>({role.duration})</div>
             </EntrySubheading>
         )
-        return i ? <EntryBullet sub={true}>{dateSubheading}</EntryBullet> : dateSubheading
+        return (
+            <EntryBullet sub={true}>{dateSubheading}</EntryBullet>
+        )
+        // return (i ? <EntryBullet sub={true}>{dateSubheading}</EntryBullet> : dateSubheading)
     }
 
     return (
