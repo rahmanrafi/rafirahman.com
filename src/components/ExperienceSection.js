@@ -1,12 +1,15 @@
 import * as React from "react";
 import styled from 'styled-components'
 import { chronologizeRoles } from "../../api/timelineUtils";
+import { LocationTag } from "./common/LocationTag";
 import { PrettyLink } from "./common/PrettyLink";
 import { SectionSkeleton } from "./common/SectionSkeleton";
-import { EntrySubheading, EntryBulletContainer, EntryBullet } from "./common/TimelineSection";
+import { EntrySubheading, EntryBulletContainer, EntryBullet, DateSubheading, ListBullet } from "./common/TimelineSection";
 
 const RoleDetails = styled.div`
 `
+
+
 
 export function ExperienceSection(data) {
     if (!data) {
@@ -38,37 +41,40 @@ export function EmployerEntry({ data }) {
 }
 
 function EmploymentRole({ role, index }) {
-    function genDateSubheading(i) {
-        let dateSubheading = (
-            <EntrySubheading>
-                <div>{role.startDate} - {role.endDate}</div>
-                <div>({role.duration})</div>
-            </EntrySubheading>
-        )
-        return (
-            <EntryBullet sub={true}>{dateSubheading}</EntryBullet>
-        )
-        // return (i ? <EntryBullet sub={true}>{dateSubheading}</EntryBullet> : dateSubheading)
-    }
+    // function genDateSubheading(i) {
+    //     let dateSubheading = (
+    //         <EntrySubheading>
+    //             <div>{role.startDate} - {role.endDate}</div>
+    //             {/* <div>({role.duration})</div> */}
+    //         </EntrySubheading>
+    //     )
+    //     // <div style={{position: 'relative', right: '25px', color: 'var(--tertiary-color)'}}>•</div>
+    //     return (
+    //         <EntryBullet data={[role.startDate, role.endDate]} sub={true}>{dateSubheading}</EntryBullet>
+    //         // <EntryBullet sub={true}>{dateSubheading}</EntryBullet>
+    //     )
+    //     // return (i ? <EntryBullet sub={true}>{dateSubheading}</EntryBullet> : dateSubheading)
+    // }
 
     return (
         <div>
             <div>
-                {genDateSubheading(index)}
+                {/* <{genDateSubheading(index)}> */}
                 {/* <EntrySubheading>
                     <div>{role.startDate} - {role.endDate}</div>
                     <div>({role.duration})</div>
                 </EntrySubheading> */}
+                <DateSubheading startDate={role.startDate} endDate={role.endDate} />
             </div>
             <div>
                 <EntrySubheading>
                     <div>{role.position}</div>
-                    <div>{role.location}</div>
+                    <LocationTag location={role.location} />
                 </EntrySubheading>
             </div>
             <ul>
                 {role.highlights.map((detail, i) =>
-                    <li key={i}>{detail}</li>
+                    <ListBullet key={i}>{detail}</ListBullet>
                 )}
             </ul>
         </div>

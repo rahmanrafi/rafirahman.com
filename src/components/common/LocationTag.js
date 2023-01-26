@@ -1,26 +1,24 @@
 import * as React from "react";
-import ReactDOM from 'react-dom'
 import styled from 'styled-components'
-import { library, icon, IconName} from '@fortawesome/fontawesome-svg-core'
+import 'react-loading-skeleton/dist/skeleton.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faGlobe } from '@fortawesome/free-solid-svg-icons'
+import { faLocationDot, fas } from '@fortawesome/free-solid-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core'
 
-const Location = styled.div`
-    display: inline;
+const LocationTagContainer = styled.div`
+  display: inline-flex;
+  align-items: center;
 `
+const LocationIconStyle = {
+    marginRight: '10px',
+    fontSize: '0.66em',
+    color: 'var(--secondary-color)',
+}
 
-export function LocationComponent({ location }) {
-  if (location) {
-    library.add(faLocationDot)
+export function LocationTag({ location }) {
     return (
-        <Location>
-            <FontAwesomeIcon icon='location-dot'></FontAwesomeIcon> {location}
-        </Location>
-    );
-  } else {
-    return (
-      <h1> Loading...</h1>
-    );
-  }
+      <LocationTagContainer>
+        <FontAwesomeIcon icon={faLocationDot} style={LocationIconStyle} /> {location}
+      </LocationTagContainer>
+    )
 }

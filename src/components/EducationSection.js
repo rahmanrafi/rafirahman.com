@@ -1,7 +1,7 @@
 import * as React from "react";
 import { SectionSkeleton } from "./common/SectionSkeleton";
 import { formatTime } from "../../api/timelineUtils";
-import { EntrySubheading } from "./common/TimelineSection";
+import { DateSubheading, EntrySubheading, ListBullet } from "./common/TimelineSection";
 
 export function EducationSection(data) {
     if (!data) {
@@ -23,12 +23,19 @@ export function EducationEntry({ entry }) {
         <div>
             <div className={'subsection-header'}>{entry.institution}</div>
             <div>
+                <DateSubheading startDate={entry.startDate} endDate={entry.endDate} />
+            </div>
+            <div>
                 <EntrySubheading>
                     <div>{entry.studyType}</div>
                     <div>CGPA: {entry.score}</div>
                 </EntrySubheading>
+                <EntrySubheading>
+                    <ul>
+                        <ListBullet>{entry.area}</ListBullet>
+                    </ul>
+                </EntrySubheading>
             </div>
-            <div>{entry.startDate} - {entry.endDate}</div>
         </div>
     )
 }

@@ -1,7 +1,8 @@
 import * as React from "react";
 import styled from 'styled-components'
 import { SectionHeader } from "./SectionHeader";
-import { Chrono } from 'react-chrono';
+import Stack from 'react-bootstrap/Stack'
+
 
 const bulletWidth = '15px'
 const lineWidth = '2px'
@@ -13,8 +14,15 @@ const TimelineContainer = styled.div`
     margin-top: 1em;
   } 
   &:not(:last-of-type) {
-    margin-bottom: 2.5em;
+    margin-bottom: 2em;
   }
+`
+
+export const ListBullet = styled.li`
+    &::marker {
+        color: var(--primary-color);
+        font-size: 0.7em;
+    }
 `
 
 export const EntrySubheading = styled.div`
@@ -47,7 +55,7 @@ export const EntryBulletContainer = styled.div`
         border-radius: 50%;
         aspect-ratio: 1/1;
         width: ${bulletWidth};
-        margin-top: ${bulletMarginTop};
+        margin-top: calc(${bulletMarginTop});
         left: calc(0em - (${bulletWidth} / 2 - (${lineWidth} / 2)));
     }
     &.sub:before {
@@ -69,10 +77,17 @@ export const EntryItem = styled.div`
     }
 `
 
+const BulletTime = styled.div`
+    color: var(--secondary-color);
+    font-size: 0.9em;
+    position: absolute;
+    text-align: right;
+    left: -6.5em;
+    width: 5em;
+`
+
 
 export function TimelineSection({ sectionName, ready, children }) {
-    console.log(sectionName)
-    console.log(children)
     return (
         <TimelineContainer>
             <SectionHeader title={sectionName} ready={ready}></SectionHeader>
@@ -84,8 +99,6 @@ export function TimelineSection({ sectionName, ready, children }) {
 }
 
 export function EntriesList({ ready, children }) {
-    console.log('children')
-    console.log(children)
     if (!ready) {
         return (
             <div>
@@ -105,10 +118,33 @@ export function EntriesList({ ready, children }) {
 }
 
 export function EntryBullet({ data, sub = false }) {
-    let secondaryClass = sub ? 'sub' : ''
+    console.log(data)
+    let secondaryClass = !sub ? 'sub' : ''
     return (
-        <EntryBulletContainer className={secondaryClass}>
-            {data}
-        </EntryBulletContainer>
+        <div className='eb'>
+            <BulletTime>
+                <Stack>
+                    {data.map(d => <div>{d}</div>)}
+                </Stack>
+            </BulletTime>
+            <EntryBulletContainer className={secondaryClass}>
+            </EntryBulletContainer>
+        </div>
+
     )
+}
+
+export function DateSubheading({startDate, endDate}) {
+    let dateSubheading = (
+        <EntrySubheading>
+            <div>{startDate} - {endDate}</div>
+            {/* <div>({role.duration})</div> */}
+        </EntrySubheading>
+    )
+    // <div style={{position: 'relative', right: '25px', color: 'var(--tertiary-color)'}}>•</div>
+    return (
+        <EntryBullet data={[startDate, endDate]} sub={true}>{dateSubheading}</EntryBullet>
+        // <EntryBullet sub={true}>{dateSubheading}</EntryBullet>
+    )
+    // return (i ? <EntryBullet sub={true}>{dateSubheading}</EntryBullet> : dateSubheading)
 }
