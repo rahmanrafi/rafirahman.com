@@ -1,7 +1,7 @@
 import * as React from "react";
 import { SectionSkeleton } from "./common/SectionSkeleton";
 import { formatTime } from "../../api/timelineUtils";
-import { TimelineSubheading } from "./common/TimelineSection";
+import { EntrySubheading } from "./common/TimelineSection";
 
 export function EducationSection(data) {
     if (!data) {
@@ -11,11 +11,9 @@ export function EducationSection(data) {
             </div>
         )
     }
-    let entriesArray = []
-    data.map((entry, i) => {
-        entriesArray.push(<EducationEntry entry={entry} key={i} />)
-    })
-    return entriesArray
+    return(data.map((entry, i) => (
+        <EducationEntry entry={entry} key={i} />
+    )))
 }
 
 export function EducationEntry({ entry }) {
@@ -25,10 +23,10 @@ export function EducationEntry({ entry }) {
         <div>
             <div className={'subsection-header'}>{entry.institution}</div>
             <div>
-                <TimelineSubheading>
+                <EntrySubheading>
                     <div>{entry.studyType}</div>
                     <div>CGPA: {entry.score}</div>
-                </TimelineSubheading>
+                </EntrySubheading>
             </div>
             <div>{entry.startDate} - {entry.endDate}</div>
         </div>

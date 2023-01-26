@@ -16,7 +16,8 @@ export function SkillList(data) {
                 <SkillItem skill={skill} key={i}></SkillItem>
             ))}
         </Stack>
-    );
+    )
+
 }
 
 function SkillItem({ skill }) {

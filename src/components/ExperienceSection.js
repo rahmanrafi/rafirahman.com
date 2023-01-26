@@ -1,8 +1,12 @@
 import * as React from "react";
+import styled from 'styled-components'
 import { chronologizeRoles } from "../../api/timelineUtils";
 import { PrettyLink } from "./common/PrettyLink";
 import { SectionSkeleton } from "./common/SectionSkeleton";
-import { TimelineSubheading } from "./common/TimelineSection";
+import { EntrySubheading, EntryBulletContainer, EntryBullet } from "./common/TimelineSection";
+
+const RoleDetails = styled.div`
+`
 
 export function ExperienceSection(data) {
     if (!data) {
@@ -12,12 +16,9 @@ export function ExperienceSection(data) {
             </div>
         )
     }
-    let timelineData = chronologizeRoles(data)
-    let entriesArray = []
-    timelineData.map((entry, i) => {
-        entriesArray.push(<EmployerEntry data={entry} key={i} />)
-    })
-    return entriesArray
+    return (chronologizeRoles(data).map((entry, i) => (
+        <EmployerEntry data={entry} key={i} />
+    )))
 }
 
 export function EmployerEntry({ data }) {
@@ -28,28 +29,39 @@ export function EmployerEntry({ data }) {
     return (
         <div>
             {employerHeader}
-            <div>
-                {data.roles.map((role, i) => <EmploymentRole role={role} key={i} />
+            <RoleDetails>
+                {data.roles.map((role, i) => <EmploymentRole role={role} index={i} key={i} />
                 )}
-            </div>
+            </RoleDetails>
         </div>
     );
 }
 
-function EmploymentRole({ role }) {
+function EmploymentRole({ role, index }) {
+    function genDateSubheading(i) {
+        let dateSubheading = (
+            <EntrySubheading>
+                <div>{role.startDate} - {role.endDate}</div>
+                <div>({role.duration})</div>
+            </EntrySubheading>
+        )
+        return i ? <EntryBullet sub={true}>{dateSubheading}</EntryBullet> : dateSubheading
+    }
+
     return (
         <div>
             <div>
-                <TimelineSubheading>
+                {genDateSubheading(index)}
+                {/* <EntrySubheading>
                     <div>{role.startDate} - {role.endDate}</div>
                     <div>({role.duration})</div>
-                </TimelineSubheading>
+                </EntrySubheading> */}
             </div>
             <div>
-                <TimelineSubheading>
+                <EntrySubheading>
                     <div>{role.position}</div>
                     <div>{role.location}</div>
-                </TimelineSubheading>
+                </EntrySubheading>
             </div>
             <ul>
                 {role.highlights.map((detail, i) =>

@@ -15,7 +15,7 @@ export function SectionSkeleton({ count = 1 }) {
     let skeletonArray = []
     for (let i = 0; i < count; i++) {
         skeletonArray.push(
-            <SkeletonContainer>
+            <SkeletonContainer key={i}>
                 <Skeleton width={randomWidth()} height={'1.75em'} />
                 <Skeleton width={randomWidth()} height={'5em'} />
             </SkeletonContainer>
