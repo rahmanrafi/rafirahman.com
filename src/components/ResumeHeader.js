@@ -46,25 +46,26 @@ const contactInfoIconStyle = {
 }
 
 export function ResumeHeader({ data }) {
-    if (data?.basics) {
-        const basics = data.basics;
-        const [firstName, lastName] = basics.name.split(' ')
-        const subheadings = [basics.label, basics.locationAsString]
+    if (!data) {
         return (
-            <Container>
-                <FullName firstName={firstName} lastName={lastName} />
-                <ContactLinks data={data} />
-            </Container>
-        );
-    } else {
-        return (
-            <div>
-                <FullName />
-                <ContactLinks />
-                <Subheading />
+            <div style={{marginBottom: '1.5em'}}>
+                <Skeleton width={'75%'} height={'3.5em'} />
+                {/* <FullName /> */}
+                {/* <ContactLinks /> */}
+                {/* <Subheading /> */}
             </div>
         );
     }
+    const basics = data.basics;
+    const [firstName, lastName] = basics.name.split(' ')
+    const subheadings = [basics.label, basics.locationAsString]
+    return (
+        <Container>
+            <FullName firstName={firstName} lastName={lastName} />
+            <ContactLinks data={data} />
+        </Container>
+    );
+    
 }
 
 function ContactLinks({ data }) {

@@ -14,10 +14,13 @@ export function SectionSkeleton({ count = 1 }) {
     }
     let skeletonArray = []
     for (let i = 0; i < count; i++) {
+        // let randWidth = randomWidth()
+        let randWidth = '100%'
+
         skeletonArray.push(
             <SkeletonContainer key={i}>
-                <Skeleton width={randomWidth()} height={'1.75em'} />
-                <Skeleton width={randomWidth()} height={'5em'} />
+                <Skeleton width={randWidth} height={'1.75em'} />
+                <Skeleton width={randWidth} height={'5em'} />
             </SkeletonContainer>
         )
     }
