@@ -11,8 +11,8 @@ export function SkillList(data) {
         )
     }
     return (
-        <Stack style={{ flexWrap: 'wrap' }} direction='horizontal' gap={1}>
-            {data.map((skill, i) => (
+        <Stack className="skill-list" style={{ flexWrap: "wrap" }} direction='horizontal' gap={1}>
+            {data.map((skill: string, i: number) => (
                 <SkillItem skill={skill} key={i}></SkillItem>
             ))}
         </Stack>
@@ -22,7 +22,7 @@ export function SkillList(data) {
 
 function SkillItem({ skill }) {
     return (
-        <Badge pill bg='light'>
+        <Badge className="skill-item" pill bg='light'>
             {skill.name}
         </Badge>
     )

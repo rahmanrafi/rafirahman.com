@@ -29,9 +29,10 @@ const SectionHeaderContainer = styled.h3`
     color: var(--secondary-color);
 `
 
-export function SectionHeader({ title, icon, ready }) {
+export function SectionHeader({ title, ready, icon }: { title: string, ready: boolean, icon?: any}) {
     if (!ready) {
         return (
+            // Note: the font size is overriden here to force the container to be larger for when the skeleton renders
             <SectionHeaderContainer style={{ fontSize: '2.5em' }}>
                 <Skeleton width={'55%'} inline={true}></Skeleton>
             </SectionHeaderContainer>
@@ -44,7 +45,7 @@ export function SectionHeader({ title, icon, ready }) {
 
     return (
         <Stack direction='horizontal'>
-            <SectionHeaderContainer>
+            <SectionHeaderContainer className="section-header-container">
                 <span><FontAwesomeIcon style={headerIconStyle} icon={icon} /></span> {title}
             </SectionHeaderContainer>
         </Stack>

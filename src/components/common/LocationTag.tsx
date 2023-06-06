@@ -15,7 +15,7 @@ const LocationIconStyle = {
     color: 'var(--secondary-color)',
 }
 
-export function LocationTag({ location }) {
+export function LocationTag({ location }: { location: string }) {
     return (
       <LocationTagContainer>
         <FontAwesomeIcon icon={faLocationDot} style={LocationIconStyle} /> {location}

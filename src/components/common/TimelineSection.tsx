@@ -4,9 +4,9 @@ import { SectionHeader } from "./SectionHeader";
 import Stack from 'react-bootstrap/Stack'
 
 
-const bulletWidth = '15px'
+const bulletWidth = '14.5px'
 const lineWidth = '2px'
-const bulletMarginTop = '6px'
+const bulletMarginTop = '4px'
 const bulletBorderWidth = '4px'
 
 const TimelineContainer = styled.div`
@@ -15,10 +15,14 @@ const TimelineContainer = styled.div`
   } 
   &:not(:last-of-type) {
     margin-bottom: 2em;
+    @media print {
+        margin-bottom: 1em;
+    }
   }
 `
 
 export const ListBullet = styled.li`
+    font-size: 0.9em;
     &::marker {
         color: var(--primary-color);
         font-size: 0.7em;
@@ -28,6 +32,7 @@ export const ListBullet = styled.li`
 export const EntrySubheading = styled.div`
   color: var(--secondary-color);
   display: flex;
+  font-size: 0.9em;
   justify-content: space-between;
   margin-right: 3px;
 `
@@ -71,7 +76,7 @@ export const EntryBulletContainer = styled.div`
 `
 
 export const EntryItem = styled.div`
-    padding-left: 1.25em;
+    padding-left: 1.5em;
     &:first-of-type{
         padding-top: 10px;
     }
@@ -82,14 +87,21 @@ const BulletTime = styled.div`
     font-size: 0.9em;
     position: absolute;
     text-align: right;
-    left: -6.5em;
+    left: -6em;
     width: 5em;
 `
 
+const DateSeparator = styled.div`
+    color: var(--tertiary-color);
+    position: relative;
+    right: 7.5px;
+    line-height: 15px;
+`
 
-export function TimelineSection({ sectionName, ready, children }) {
+
+export function TimelineSection({ sectionName, ready, children, className }: { sectionName: string, ready: any, children: JSX.Element[], className?: string}) {
     return (
-        <TimelineContainer>
+        <TimelineContainer className={className}>
             <SectionHeader title={sectionName} ready={ready}></SectionHeader>
             <div className='section-container' style={{ width: '100%', height: '100%' }}>
                 <EntriesList ready={ready} children={children} />
@@ -107,7 +119,7 @@ export function EntriesList({ ready, children }) {
         )
     }
     return (
-        <EntriesListContainer>
+        <EntriesListContainer className="entries-list-container">
             {React.Children.map(children, child => (
                 <EntryItem>
                     {child}
@@ -117,14 +129,17 @@ export function EntriesList({ ready, children }) {
     )
 }
 
-export function EntryBullet({ data, sub = false }) {
-    console.log(data)
+export function EntryBullet({ startDate, endDate, sub = false }: { startDate: string, endDate: string, sub: boolean }) {
     let secondaryClass = !sub ? 'sub' : ''
+    // const dates = [data[0], "|", data[1]]
     return (
         <div className='eb'>
             <BulletTime>
                 <Stack>
-                    {data.map(d => <div>{d}</div>)}
+                    <div>{startDate}</div>
+                    <DateSeparator>|</DateSeparator>
+                    <div>{endDate}</div>
+                    {/* {dates.map(d => <div>{d}</div>)} */}
                 </Stack>
             </BulletTime>
             <EntryBulletContainer className={secondaryClass}>
@@ -135,15 +150,15 @@ export function EntryBullet({ data, sub = false }) {
 }
 
 export function DateSubheading({startDate, endDate}) {
-    let dateSubheading = (
-        <EntrySubheading>
-            <div>{startDate} - {endDate}</div>
-            {/* <div>({role.duration})</div> */}
-        </EntrySubheading>
-    )
+    // let dateSubheading = (
+    //     <EntrySubheading>
+    //         <div>{startDate} - {endDate}</div>
+    //         {/* <div>({role.duration})</div> */}
+    //     </EntrySubheading>
+    // )
     // <div style={{position: 'relative', right: '25px', color: 'var(--tertiary-color)'}}>•</div>
     return (
-        <EntryBullet data={[startDate, endDate]} sub={true}>{dateSubheading}</EntryBullet>
+        <EntryBullet startDate={startDate} endDate={endDate} sub={true}></EntryBullet>
         // <EntryBullet sub={true}>{dateSubheading}</EntryBullet>
     )
     // return (i ? <EntryBullet sub={true}>{dateSubheading}</EntryBullet> : dateSubheading)

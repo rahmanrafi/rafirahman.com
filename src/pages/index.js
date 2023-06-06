@@ -1,6 +1,6 @@
 import * as React from "react"
 import 'react-bootstrap'
-import { getResume } from "../../api/resume"
+import { getResume } from "../../api/getResume"
 import { ResumeHeader } from "../components/ResumeHeader"
 import { SkillList } from "../components/SkillList"
 import { TimelineSection } from "../components/common/TimelineSection"
@@ -20,9 +20,9 @@ const IndexPageComponent = () => {
     return (
         <main>
             <ResumeHeader data={resumeData}></ResumeHeader>
-            <TimelineSection sectionName='Experience' ready={resumeData} children={ExperienceSection(resumeData?.work)} />
-            <TimelineSection sectionName='Education' ready={resumeData} children={EducationSection(resumeData?.education)} />
-            <TimelineSection sectionName='Skills' ready={resumeData} children={SkillList(resumeData?.skills)} />
+            <TimelineSection sectionName='Experience' className="experience-section" ready={resumeData} children={ExperienceSection(resumeData?.work)} />
+            <TimelineSection sectionName='Education' className="education-section" ready={resumeData} children={EducationSection(resumeData?.education)} />
+            <TimelineSection sectionName='Skills' className="skills-section" ready={resumeData} children={SkillList(resumeData?.skills)} />
         </main>
     )
 }
