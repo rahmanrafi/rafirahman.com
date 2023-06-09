@@ -5,6 +5,7 @@
     --tertiary-color: #aaaaaa;
     --line-color: #cccccc;
     --accent-color: #b2e7f7;
+    --main-container-left-padding: 75px;
 
     @media print {
         --secondary-color: #363636;
@@ -12,6 +13,7 @@
 }
 
 main {
+    font-variant-ligatures: none;
     border-width: 10px;
     padding-left: 75px;
     margin: 10px 0px 50px 0px;
@@ -54,7 +56,7 @@ ul {
     }
 
     main {
-        /* padding-left: 40px; */
+        padding-left: var(--main-container-left-padding);
         margin: 0 0.25in 0 0;
         /* margin: unset; */
     }
@@ -68,7 +70,8 @@ ul {
     }
 
     .entry-subheading {
-        color: #1d1d1d;
+        color: #3e3e3e;
+        font-weight: 600;
     }
 
     .section-header-container {
@@ -104,7 +107,7 @@ ul {
     }
 
     .skill-list {
-        width: 90%;
+        width: 100%;
     }
 
     .skill-item {

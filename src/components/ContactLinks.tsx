@@ -41,16 +41,16 @@ export function ContactLinks({ data }) {
             iconConfig = 'globe';
         }
         return (
-            <ContactLinkItem url={link.url} text={link.username} iconConfig={iconConfig} key={i} />
+            <ContactLinkItem url={link.url} text={link.username} iconConfig={iconConfig} key={i} title={link.network} />
         );
     })
 
     if (basics?.email) {
-        contactLinkItems.push(<ContactLinkItem url={`mailto:${basics.email}`} text={basics.email} iconConfig={faAt} key="email" />)
+        contactLinkItems.push(<ContactLinkItem url={`mailto:${basics.email}`} text={basics.email} iconConfig={faAt} key="email" title="Email" />)
     }
 
     if (basics?.phone) {
-        contactLinkItems.push(<ContactLinkItem url={`tel:${basics.phone}`} text={basics.phone} iconConfig={faSquarePhone} key="phone" /> )
+        contactLinkItems.push(<ContactLinkItem url={`tel:${basics.phone}`} text={basics.phone} iconConfig={faSquarePhone} key="phone" title="Phone" /> )
     }
     return (
         <ContactLinksContainer className='contact-links-container collection'>
@@ -59,7 +59,7 @@ export function ContactLinks({ data }) {
     );
 }
 
-function ContactLinkItem({ url, text, iconConfig, key }: { url: string, text: string, iconConfig: any, key: string | number }) {
+function ContactLinkItem({ url, text, iconConfig, key, title }: { url: string, text: string, iconConfig: any, key: string | number, title: string }) {
     return (
         <ContactLinkItemContainer key={key}>
             <FontAwesomeIcon icon={iconConfig} style={contactInfoIconStyle} />

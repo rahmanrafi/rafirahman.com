@@ -82,7 +82,7 @@ export const EntryItem = styled.div`
     }
 `
 
-const BulletTime = styled.div`
+let BulletTime = styled.div`
     color: var(--secondary-color);
     font-size: 0.9em;
     position: absolute;
@@ -91,27 +91,35 @@ const BulletTime = styled.div`
     width: 5em;
 `
 
-const DateSeparator = styled.div`
+let DateStack = styled.div`
+    display: flex;
+    flex-direction: column;
+`
+
+let DateSeparator = styled.div`
     color: var(--tertiary-color);
     position: relative;
     right: 7.5px;
     line-height: 15px;
 `
 
+let printOptions: Record<string, any> = {}
 
-export function TimelineSection({ sectionName, ready, children, className }: { sectionName: string, ready: any, children: JSX.Element[], className?: string}) {
+export function TimelineSection({ sectionName, data, children, className }: { sectionName: string, data: any, children: JSX.Element[], className?: string}) {
+    printOptions = data?.printOptions ?? {}
+
     return (
         <TimelineContainer className={className}>
-            <SectionHeader title={sectionName} ready={ready}></SectionHeader>
+            <SectionHeader title={sectionName} data={data}></SectionHeader>
             <div className='section-container' style={{ width: '100%', height: '100%' }}>
-                <EntriesList ready={ready} children={children} />
+                <EntriesList data={data} children={children} />
             </div>
         </TimelineContainer>
     )
 }
 
-export function EntriesList({ ready, children }) {
-    if (!ready) {
+export function EntriesList({ data, children }) {
+    if (!data) {
         return (
             <div>
                 {children}
@@ -131,19 +139,32 @@ export function EntriesList({ ready, children }) {
 
 export function EntryBullet({ startDate, endDate, sub = false }: { startDate: string, endDate: string, sub: boolean }) {
     let secondaryClass = !sub ? 'sub' : ''
-    // const dates = [data[0], "|", data[1]]
+
+    if (printOptions.inlineDates) {
+        BulletTime = styled.div`
+            color: var(--secondary-color);
+            font-size: 0.9em;
+            position: absolute;
+            text-align: right;
+            left: -6em;
+            width: 5em;
+
+            @media print {
+                display: none;
+            }
+        `
+    }
     return (
-        <div className='eb'>
+        <div className='entry-bullet'>
             <BulletTime>
-                <Stack>
+                <DateStack>
                     <div>{startDate}</div>
                     <DateSeparator>|</DateSeparator>
                     <div>{endDate}</div>
                     {/* {dates.map(d => <div>{d}</div>)} */}
-                </Stack>
+                </DateStack>
             </BulletTime>
-            <EntryBulletContainer className={secondaryClass}>
-            </EntryBulletContainer>
+            <EntryBulletContainer className={secondaryClass} />
         </div>
 
     )

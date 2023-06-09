@@ -55,5 +55,9 @@ function postProcessResumeData(resumeData) {
         resumeData.basics.phone = overrides.phone
     }
 
+    if (overrides?.printOptions) {
+        resumeData.printOptions = overrides.printOptions 
+    }
+    
     return resumeData
 }

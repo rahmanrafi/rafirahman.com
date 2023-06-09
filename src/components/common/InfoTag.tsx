@@ -5,20 +5,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationDot, fas } from '@fortawesome/free-solid-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
 
-const LocationTagContainer = styled.div`
+const InfoTagContainer = styled.div`
   display: inline-flex;
   align-items: center;
 `
-const LocationIconStyle = {
-    marginRight: '10px',
-    fontSize: '0.66em',
-    color: 'var(--secondary-color)',
+const InfoTagStyle = {
+    marginRight: '5px',
+    color: "#555555",
 }
 
-export function LocationTag({ location }: { location: string }) {
+export function InfoTag({ text, icon, title }: { text: string, icon: any, title: string }) {
     return (
-      <LocationTagContainer>
-        <FontAwesomeIcon icon={faLocationDot} style={LocationIconStyle} /> {location}
-      </LocationTagContainer>
+      <InfoTagContainer>
+        <FontAwesomeIcon icon={icon} style={InfoTagStyle}/> {text}
+      </InfoTagContainer>
     )
 }

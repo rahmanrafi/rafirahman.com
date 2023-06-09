@@ -29,8 +29,8 @@ const SectionHeaderContainer = styled.h3`
     color: var(--secondary-color);
 `
 
-export function SectionHeader({ title, ready, icon }: { title: string, ready: boolean, icon?: any}) {
-    if (!ready) {
+export function SectionHeader({ title, data, icon }: { title: string, data: boolean, icon?: any}) {
+    if (!data) {
         return (
             // Note: the font size is overriden here to force the container to be larger for when the skeleton renders
             <SectionHeaderContainer style={{ fontSize: '2.5em' }}>

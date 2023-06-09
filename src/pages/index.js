@@ -17,12 +17,18 @@ const IndexPageComponent = () => {
         }
         fetchData()
     }, [])
+
+    let mainContainerStyle = {}
+    if(resumeData?.printOptions?.inlineDates) {
+        let root = document.documentElement
+        root.style.setProperty('--main-container-left-padding', "30px")
+    }
     return (
-        <main>
+        <main style={mainContainerStyle}>
             <ResumeHeader data={resumeData}></ResumeHeader>
-            <TimelineSection sectionName='Experience' className="experience-section" ready={resumeData} children={ExperienceSection(resumeData?.work)} />
-            <TimelineSection sectionName='Education' className="education-section" ready={resumeData} children={EducationSection(resumeData?.education)} />
-            <TimelineSection sectionName='Skills' className="skills-section" ready={resumeData} children={SkillList(resumeData?.skills)} />
+            <TimelineSection sectionName='Experience' className="experience-section" data={resumeData} children={ExperienceSection(resumeData)} />
+            <TimelineSection sectionName='Education' className="education-section" data={resumeData} children={EducationSection(resumeData)} />
+            <TimelineSection sectionName='Skills' className="skills-section" data={resumeData} children={SkillList(resumeData?.skills)} />
         </main>
     )
 }
