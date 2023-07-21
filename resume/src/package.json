@@ -1,0 +1,37 @@
+{
+  "name": "resume",
+  "version": "1.0.0",
+  "private": true,
+  "description": "resume",
+  "author": "Rafi Rahman",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.2.1",
+    "@fortawesome/free-brands-svg-icons": "^6.2.1",
+    "@fortawesome/free-regular-svg-icons": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.2.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "babel-plugin-styled-components": "^2.0.7",
+    "bootstrap": "^5.2.3",
+    "dayjs": "^1.11.7",
+    "gatsby": "^5.4.2",
+    "gatsby-omni-font-loader": "^2.0.2",
+    "gatsby-plugin-styled-components": "^6.3.0",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.7.0",
+    "react-chrono": "^1.20.0",
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
+    "react-loading-skeleton": "^3.1.0",
+    "styled-components": "^5.3.6"
+  }
+}

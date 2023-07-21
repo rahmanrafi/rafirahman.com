@@ -1,0 +1,116 @@
+:root {
+    --drop-shadow: 1px 2px 6px #00000034;
+    --primary-color: #505050;
+    --secondary-color: #555555;
+    --tertiary-color: #aaaaaa;
+    --line-color: #cccccc;
+    --accent-color: #b2e7f7;
+    --main-container-left-padding: 75px;
+
+    @media print {
+        --secondary-color: #363636;
+    }
+}
+
+main {
+    font-variant-ligatures: none;
+    border-width: 10px;
+    padding-left: 75px;
+    margin: 10px 0px 50px 0px;
+}
+
+body {
+    font-family: 'DM Sans', Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    width: 7.5in;
+    margin: auto;
+    line-height: 1.75em;
+    /* box-shadow: 0px 0px 50px 8px rgba(128, 128, 128, 0.5); */
+}
+
+ul {
+    padding-left: 1em;
+}
+
+.collection {
+    list-style: none;
+}
+
+.badge {
+    color: var(--secondary-color);
+    font-weight: unset;
+    border: 0.25px solid rgb(206, 206, 206);
+}
+
+.subsection-header, .pretty-link.subsection-header {
+    color: #454545;
+    font-weight: 900;
+    font-size: 1.1em;
+}
+
+@media print {
+    body {
+        width: 100%;
+        font-size: 10pt;
+        line-height: 1.75em;
+    }
+
+    main {
+        padding-left: var(--main-container-left-padding);
+        margin: 0 0.25in 0 0;
+        /* margin: unset; */
+    }
+
+    & .link-icon {
+        display: none;
+    }
+
+    .subsection-header, .pretty-link.subsection-header {
+        color: #313131
+    }
+
+    .entry-subheading {
+        color: #3e3e3e;
+        font-weight: 600;
+    }
+
+    .section-header-container {
+        color: #585858;
+        margin-left: 4px;
+        margin-bottom: 4px;
+    }
+
+    .education-section > * .section-header-container {
+        margin-left: 2px;
+    }
+
+    .skills-section {
+        display: flex;
+    }
+
+    .skills-section > .hstack {
+        display: block;
+        position: relative;
+        top: 10px;
+    }
+
+    .skills-section > .section-container > .entries-list-container:before {
+        content: none;
+    }
+
+    .skills-section > .section-container > .entries-list-container > div {
+        padding-left: 5px;
+    }
+
+    .skills-section > * .section-header-container {
+        display: flex;
+    }
+
+    .skill-list {
+        width: 100%;
+    }
+
+    .skill-item {
+        padding-bottom: 3px;
+    }
+}
